@@ -1,0 +1,22 @@
+Metrics/LineLength:
+  Max: 200
+
+
+Metrics/MethodLength:
+  Max: 20
+
+
+Style/Documentation:
+  Enabled: false
+
+
+RegexpLiteral:
+  Enabled: false
+
+
+AllCops:
+  Excludes:
+    - db/schema.rb
+
+RegexpLiteral:
+  MaxSlashes:0
