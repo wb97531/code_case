@@ -9,7 +9,7 @@ RSpec.describe "projects/index", :type => :view do
         :description => "MyText",
         :priority => 1,
         :user_id => 2,
-        :current? => false
+        :current => false
       ),
       Project.create!(
         :project_name => "Project Name",
@@ -17,7 +17,7 @@ RSpec.describe "projects/index", :type => :view do
         :description => "MyText",
         :priority => 1,
         :user_id => 2,
-        :current? => false
+        :current => false
       )
     ])
   end

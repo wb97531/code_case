@@ -7,7 +7,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :description
       t.integer :priority
       t.integer :user_id
-      t.boolean :current?
+      t.boolean :current
 
       t.timestamps
     end

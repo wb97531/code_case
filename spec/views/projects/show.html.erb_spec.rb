@@ -8,7 +8,7 @@ RSpec.describe "projects/show", :type => :view do
       :description => "MyText",
       :priority => 1,
       :user_id => 2,
-      :current? => false
+      :current => false
     ))
   end
 

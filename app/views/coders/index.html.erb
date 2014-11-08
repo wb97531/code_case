@@ -1,0 +1,31 @@
+<div class="page-header">
+  <%= link_to new_coder_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Coder
+  <% end %>
+  <h1>Listing coders</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Coder name</th>
+            <th>Email</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @coders) do |coder| %>
+            <td><%= coder.coder_name %></td>
+            <td><%= coder.email %></td>
+            <td><%= link_to 'Show', coder %></td>
+        <td><%= link_to 'Edit', edit_coder_path(coder) %></td>
+        <td><%= link_to 'Destroy', coder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
