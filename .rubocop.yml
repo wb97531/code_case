@@ -17,6 +17,3 @@ RegexpLiteral:
 AllCops:
   Excludes:
     - db/schema.rb
-
-RegexpLiteral:
-  MaxSlashes:0
