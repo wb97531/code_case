@@ -4,8 +4,9 @@ RSpec.describe "coders/edit", :type => :view do
   before(:each) do
     @coder = assign(:coder, Coder.create!(
       :coder_name => "MyString",
-      :password_digest => "MyString",
-      :email => "MyString"
+      :password => "MyString",
+      :password_confirmation => "MyString",
+      :email => "MyString@example.com"
     ))
   end
 
