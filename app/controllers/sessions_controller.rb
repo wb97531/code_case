@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  def login
+  end
   def create
     coder = Coder.find_by_email(params[:email])
     if coder && coder.authenticate(params[:password])
