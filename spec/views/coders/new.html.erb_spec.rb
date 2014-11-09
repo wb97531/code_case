@@ -16,7 +16,10 @@ RSpec.describe "coders/new", :type => :view do
 
       assert_select "input#coder_coder_name[name=?]", "coder[coder_name]"
 
-      assert_select "input#coder_password_digest[name=?]", "coder[password_digest]"
+      assert_select "input#coder_password[name=?]", "coder[password]"
+
+      assert_select "input#coder_password_confirmation[name=?]", "coder[password_confirmation]"
+
 
       assert_select "input#coder_email[name=?]", "coder[email]"
     end

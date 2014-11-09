@@ -25,10 +25,12 @@ class CodersController < ApplicationController
   # POST /coders.json
   def create
     @coder = Coder.new(coder_params)
-
     respond_to do |format|
       if @coder.save
-        format.html { redirect_to @coder, notice: 'Coder was successfully created.' }
+        # @coder.needs_verification!
+        session[:id] = @coder.id
+        format.html { redirect_to @coder, notice: "Thank you for signing up.
+                                                   You are signed in as: #{@coder.coder_name}." }
         format.json { render :show, status: :created, location: @coder }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class CodersController < ApplicationController
   def update
     respond_to do |format|
       if @coder.update(coder_params)
-        format.html { redirect_to @coder, notice: 'Coder was successfully updated.' }
+        format.html { redirect_to @coder, notice: "#{@coder.coder_name} was successfully updated." }
         format.json { render :show, status: :ok, location: @coder }
       else
         format.html { render :edit }
@@ -69,6 +71,6 @@ class CodersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coder_params
-      params.require(:coder).permit(:coder_name, :password_digest, :email)
+      params.require(:coder).permit(:coder_name, :password, :password, :email)
     end
 end
