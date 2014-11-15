@@ -1,9 +1,8 @@
 class DashboardsController < ApplicationController
   def dashboard
-    coder = Coder.find(current_coder.id)
-    @projects = coder.projects
-    @snippets = coder.snippets
-    @courses  = coder.courses
+    @projects = current_coder.projects
+    @snippets = current_coder.snippets
+    @courses  = current_coder.courses
   end
 end
 

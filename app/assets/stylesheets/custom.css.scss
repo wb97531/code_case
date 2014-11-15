@@ -26,9 +26,15 @@ ul
 .nav-pad {
   padding: 50px;
 }
+.container-dashboard {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+}
 .project-dashboard-title {
   font-size: 30px;
-  color: #E2C3A6;
+  color: #F9FCC6;
   border: 1px transparent;
   background: #C98F76;
   border-radius: 10px;
@@ -39,12 +45,12 @@ ul
   font-size: 20px;
   color: #96594E;
   border: 1px transparent;
-  background: #E2C3A6;
+  background: white;
   border-radius: 10px;
 }
 .snippet-dashboard-title {
   font-size: 30px;
-  color: #E2C3A6;
+  color: #F9FCC6;
   border: 1px transparent;
   background: #96594E	;
   border-radius: 10px;
@@ -55,12 +61,12 @@ ul
   font-size: 20px;
   color: #3F4134;
   border: 1px transparent;
-  background: #E2C3A6;
+  background: white;
   border-radius: 10px;
 }
 .course-dashboard-title {
   font-size: 30px;
-  color: #E2C3A6;
+  color: #F9FCC6;
   border: 1px transparent;
   background: #5F231F;
   border-radius: 10px;
@@ -71,7 +77,7 @@ ul
   font-size: 20px;
   color: #6E8EBA;
   border: 1px transparent;
-  background: #E2C3A6;
+  background: white;
   border-radius: 10px;
 }
 
