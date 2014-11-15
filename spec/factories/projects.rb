@@ -1,12 +1,12 @@
 FactoryGirl.define do
   factory :project do
-    project_name "MyString"
-github_link "MyString"
+    project_name "First Project"
+github_link "git.first_project@github.com"
 deadline "2014-11-07"
-description "MyText"
+description "Website to show off what I'm working on"
 priority 1
-user_id 1
-current false
+coder_id 1
+current true
   end
 
 end

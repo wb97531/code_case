@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
+  <strong>Coder:</strong>
+  <%= @project.coder_id %>
 </p>
 
 <p>
@@ -37,3 +37,6 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
+<%= link_to 'Add a snippet', new_snippet_path %>
+<%= hidden_field_tag :this_project_id, value: @project.id %>
+

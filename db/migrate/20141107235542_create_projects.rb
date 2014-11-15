@@ -6,10 +6,11 @@ class CreateProjects < ActiveRecord::Migration
       t.date :deadline
       t.text :description
       t.integer :priority
-      t.integer :user_id
+      t.integer :coder_id
       t.boolean :current
 
       t.timestamps
     end
+
   end
 end

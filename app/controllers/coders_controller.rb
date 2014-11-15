@@ -27,9 +27,8 @@ class CodersController < ApplicationController
     @coder = Coder.new(coder_params)
     respond_to do |format|
       if @coder.save
-        # @coder.needs_verification!
-        session[:id] = @coder.id
-        format.html { redirect_to @coder, notice: "Thank you for signing up.
+        session[:coder_id] = @coder.id
+        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up.
                                                    You are signed in as: #{@coder.coder_name}." }
         format.json { render :show, status: :created, location: @coder }
       else
@@ -71,6 +70,6 @@ class CodersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coder_params
-      params.require(:coder).permit(:coder_name, :password, :password, :email)
+      params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
     end
 end

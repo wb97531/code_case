@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to new_snippet_path, :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Snippet
+  <% end %>
+  <h1>Listing snippets</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Objective</th>
+            <th>Image name</th>
+            <th>Github file link</th>
+            <th>Project</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @snippets) do |snippet| %>
+            <td><%= snippet.objective %></td>
+            <td><%= snippet.image_name %></td>
+            <td><%= snippet.github_file_link %></td>
+            <td><%= snippet.project_id %></td>
+            <td><%= link_to 'Show', snippet %></td>
+        <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
+        <td><%= link_to 'Destroy', snippet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

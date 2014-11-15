@@ -1,1 +1,24 @@
-dashboard
+<div class='container'>
+  <p class='project-dashboard-title'>Projects</p>
+  <ul class='project-dashboard-links'>
+    <% @projects.each do |project| %>
+      <li><%= link_to project.description, project_path(project.id) %></li>
+    <% end %>
+  </ul>
+</div>
+<div class='container'>
+  <p class='snippet-dashboard-title'>Code Snippets</p>
+  <ul class='snippet-dashboard-links'>
+    <% @snippets.each do |snippet| %>
+      <li><%= link_to snippet.objective, snippet_path(snippet.id) %></li>
+    <% end %>
+  </ul>
+</div>
+<div class='container'>
+  <p class='course-dashboard-title'>Courses</p>
+  <ul class='course-dashboard-links'>
+    <% @courses.each do |course| %>
+      <li><%= link_to course.title, course_path(course.id) %></li>
+    <% end %>
+  </ul>
+</div>

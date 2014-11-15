@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 group :test, :darwin, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'guard-rubocop'
   gem 'guard-rspec'
   gem 'guard-bundler'
