@@ -8,7 +8,7 @@
       <th>Deadline</th>
       <th>Description</th>
       <th>Priority</th>
-      <th>User</th>
+      <th>Coder</th>
       <th>Current?</th>
       <th colspan="3"></th>
     </tr>
@@ -22,7 +22,7 @@
         <td><%= project.deadline %></td>
         <td><%= project.description %></td>
         <td><%= project.priority %></td>
-        <td><%= project.user_id %></td>
+        <td><%= project.coder_id %></td>
         <td><%= project.current %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>

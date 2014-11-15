@@ -69,10 +69,27 @@ feature 'signing in and logging out of coder' do
 
     fill_in 'Email', with: 'wendy@example.com'
     fill_in 'Password', with: '123456789'
+    fill_in 'Password confirmation', with: '123456789'
+    fill_in 'Coder name', with: 'marie'
+
+    click_button 'Update Coder'
+
+    expect(page).to have_content('marie')
+  end
+
+
+  scenario 'can not edit coder if password doesn\'t match' do
+    coder = Coder.create(coder_name: 'marie', password: '1234567', password_confirmation: '1234567', email: 'marie@example.com')
+
+    visit "/coders/#{coder.id}/edit"
+
+    fill_in 'Email', with: 'wendy@example.com'
+    fill_in 'Password', with: '123456789'
+    fill_in 'Password confirmation', with: '12345678'
     fill_in 'Coder name', with: 'wendy'
 
     click_button 'Update Coder'
 
-    expect(page).to have_content("wendy was successfully updated.")
+    expect(page).to_not have_content("wendy was successfully updated.")
   end
 end
