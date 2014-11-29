@@ -7,20 +7,22 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show snippet</h1>
+  <h1>Code Snippet</h1>
 </div>
 
-<dl class="dl-horizontal">
+<dl class="dl-horizontal snippet-text">
+  <dt>Project:</dt>
+  <dd><%= @project1.project_name %></dd>
+
   <dt>Objective:</dt>
   <dd><%= @snippet.objective %></dd>
 
-  <dt>Image name:</dt>
-  <dd><%= @snippet.image_name %></dd>
-
   <dt>Github file link:</dt>
-  <dd><%= @snippet.github_file_link %></dd>
+  <dd><a href = <%= @snippet.github_file_link %>><%= @snippet.github_file_link %></a></dd>
 
-  <dt>Project:</dt>
-  <dd><%= @snippet.project_id %></dd>
-
+  <div class = 'snippet-pic'>
+    <script src = <%= @snippet.image_name %>></script>
+  </div>
+  <a id = 'seeCodeButton' class = 'btn btn-primary' href = 'javascript:location.reload(true)'>See the code</a>
 </dl>
+

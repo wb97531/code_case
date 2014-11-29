@@ -36,7 +36,7 @@ ul
   font-size: 30px;
   color: #F9FCC6;
   border: 1px transparent;
-  background: #C98F76;
+  background: #5F231F;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -68,7 +68,7 @@ ul
   font-size: 30px;
   color: #F9FCC6;
   border: 1px transparent;
-  background: #5F231F;
+  background: #C98F76;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -79,5 +79,13 @@ ul
   border: 1px transparent;
   background: white;
   border-radius: 10px;
+}
+.snippet-pic {
+  padding: 20px 20px 125px 20px;
+}
+.snippet-text {
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
 }
 
