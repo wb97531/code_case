@@ -10,8 +10,7 @@ class SnippetsController < ApplicationController
   # GET /snippets/1
   # GET /snippets/1.json
   def show
-    @project = Project.find(@snippet.project_id)
-    @project1 = @snippet.project
+    @project = @snippet.project
   end
 
   # GET /snippets/new

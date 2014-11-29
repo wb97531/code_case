@@ -1,42 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class = 'project-text'>
+  <p id="notice"><%= notice %></p>
+  <div class = 'jumbotron' style = 'background: white;'>
+  <div class = 'row'>
+    <div class = 'col-md-3'>
+      <div class = 'project-column'>
+        Project name
+      </div>
+      <div class = 'project-data'>
+        <%= @project.project_name %>
+      </div>
+    </div>
 
-<p>
-  <strong>Project name:</strong>
-  <%= @project.project_name %>
-</p>
+    <div class = 'col-md-3'>
+      <div class = 'project-column'>
+        Deadline
+      </div>
+      <div class = 'project-data'>
+        <%= @project.deadline %>
+      </div>
+    </div>
 
-<p>
-  <strong>Github link:</strong>
-  <%= @project.github_link %>
-</p>
+    <div class = 'col-md-3'>
+      <div class = 'project-column'>
+        Coder
+      </div>
+      <div class = 'project-data'>
+        <%= @coder.coder_name %>
+      </div>
+    </div>
+  </div></br>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
+  <div>
+      <div class = 'project-column'>
+        Description
+      </div>
+      <div class = 'project-data'>
+        <%= @project.description %>
+      </div>
+  </div></br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @project.priority %>
-</p>
-
-<p>
-  <strong>Coder:</strong>
-  <%= @project.coder_id %>
-</p>
-
-<p>
-  <strong>Current:</strong>
-  <%= @project.current %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to 'Add a snippet', new_snippet_path %>
+  <%= link_to 'GitHub', @project.github_link %> |
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %> |
+  <%= link_to 'Add a snippet', new_snippet_path %>
+</div>
+</div>
 <%= hidden_field_tag :this_project_id, value: @project.id %>
 
