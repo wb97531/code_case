@@ -9,6 +9,7 @@ feature 'displaying dashboard' do
   @project_3 = FactoryGirl.create(:project, coder_id: @coder_2.id, description: 'This is the third project')
 
   visit '/'
+  save_and_open_page
 
   fill_in 'Email', with: @coder_1.email
   fill_in 'Password', with: '987654321'
