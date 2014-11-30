@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 20141115042254) do
 
   create_table "courses", force: true do |t|
     t.string   "title"
+    t.string   "place"
+    t.string   "instructor"
+    t.text     "description"
+    t.date     "start_date"
     t.date     "completion_date"
     t.boolean  "certificate"
     t.boolean  "completed"
@@ -52,4 +56,5 @@ ActiveRecord::Schema.define(version: 20141115042254) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 end

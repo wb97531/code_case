@@ -7,23 +7,33 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show course</h1>
+  <h1>Course</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Title:</dt>
-  <dd><%= @course.title %></dd>
+<div class = 'jumbotron' style = 'background: white'>
+  <dl class="dl-horizontal">
+    <dt>Title:</dt>
+    <dd><%= @course.title %></dd>
 
-  <dt>Completion date:</dt>
-  <dd><%= @course.completion_date %></dd>
+    <dt>Description:</dt>
+    <dd><%= @course.description %></dd>
 
-  <dt>Certificate:</dt>
-  <dd><%= @course.certificate %></dd>
+    <dt>Place:</dt>
+    <dd><%= @course.place %></dd>
 
-  <dt>Completed:</dt>
-  <dd><%= @course.completed %></dd>
+    <dt>Instructor:</dt>
+    <dd><%= @course.instructor %></dd>
 
-  <dt>Coder:</dt>
-  <dd><%= @course.coder_id %></dd>
+    <dt>Start Date:</dt>
+    <dd><%= @course.start_date.strftime('%B %d, %Y') %></dd>
 
-</dl>
+    <dt>Completed:</dt>
+    <dd><%= @course.completion_date.strftime('%B %d, %Y') %></dd>
+
+    <dt>Certificate:</dt>
+    <dd><%= @course.certificate ? 'Yes' : "N/A" %></dd>
+
+    <dt>Coder:</dt>
+    <dd><%= @course.coder.coder_name %></dd>
+  </dl>
+</div>
