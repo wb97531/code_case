@@ -22,7 +22,7 @@
   </ul>
 </div>
 <div class='container-dashboard'>
-  <p class='course-dashboard-title'>Courses</p>
+  <p class='course-dashboard-title'>Education</p>
   <ul class='course-dashboard-links'>
     <% @courses.each do |course| %>
       <li><%= link_to course.title, course_path(course.id) %></li>
