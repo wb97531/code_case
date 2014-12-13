@@ -39,7 +39,8 @@
       </div>
   </div></br>
 
-  <%= link_to 'GitHub', @project.github_link %> |
+  <%= link_to 'GitHub', @project.github_link, :target => "_blank" %> |
+  <%= link_to 'Project Online', @project.browser_project_link, :target => "_blank" %> |
   <%= link_to 'Edit', edit_project_path(@project) %> |
   <%= link_to 'Back', projects_path %> |
   <%= link_to 'Add a snippet', new_snippet_path %>

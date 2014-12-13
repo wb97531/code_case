@@ -38,7 +38,8 @@ Project.create project_name: 'Code Case',
                description: 'An app to show what a coder has done and has been working on',
                priority: 1,
                coder_id: 500,
-               current: true
+               current: true,
+               browser_project_link: 'https://code-case.herokuapp.com/'
 
 Snippet.create objective: 'Give the dashboard associated collections for the dashboard view',
                image_name: 'https://gist.github.com/wb97531/30c3f42a9c0dbf3349e8.js',
