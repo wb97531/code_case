@@ -48,7 +48,7 @@ Snippet.create objective: 'Give the dashboard associated collections for the das
                coder_id: 500
 
 Snippet.create objective: 'Loading gist image on snippet show page',
-               image_name: 'https://gist.github.com/wb97531/55761ed56412fc1a750a.js',
+               image_name: 'https://gist.github.com/wb97531/0bc8d43411866be3eaf1.js',
                github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/views/snippets/show.html.erb',
                project_id: 1,
                coder_id: 500
