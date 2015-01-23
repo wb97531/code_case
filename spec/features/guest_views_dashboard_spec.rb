@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Guest Viewing Coder Dashboard' do
-  scenario 'Guest can view a coder dashboard by email' do
+feature 'guest viewing coder dashboard' do
+  scenario 'guest can view a coder dashboard by email' do
     coder = FactoryGirl.create(:coder, email: 'wendy@gmail.com', id: 1000)
     FactoryGirl.create(:project, coder_id: 1000, project_name: 'silly project')
 
