@@ -21,4 +21,17 @@ class SessionsController < ApplicationController
                   notice: "#{coder.email} has been logged out."
     end
   end
+
+  def guest
+  end
+
+  def view_coder
+    Coder.find_by(email: params[:email]) ? coder_id = Coder.find_by(email: params[:email]).id : false
+    if coder_id
+      redirect_to dashboard_path(coder_id)
+    else
+      redirect_to guest_path, notice: 'We can\'t locate a coder with that email address.'
+    end
+  end
+
 end

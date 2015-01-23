@@ -1,6 +1,5 @@
 class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
-  # before_action :check_coder, only: [:create, :update, :destroy]
 
   # GET /snippets
   # GET /snippets.json
@@ -27,6 +26,8 @@ class SnippetsController < ApplicationController
   # POST /snippets.json
   def create
     @snippet = Snippet.new(snippet_params)
+    @project = Project.find_by(project_name: params[:project_name])
+    @snippet.project_id = @project.id
     respond_to do |format|
       if @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
@@ -72,11 +73,4 @@ class SnippetsController < ApplicationController
     def snippet_params
       params.require(:snippet).permit(:objective, :image_name, :github_file_link, :project_id, :coder_id)
     end
-
-  # def check_coder
-  #   if Coder.find(@snippet.coder_id).email == Coder.find(session[:coder_id]).email
-  #   else
-  #     redirect_to '/'
-  #   end
-  # end
 end
