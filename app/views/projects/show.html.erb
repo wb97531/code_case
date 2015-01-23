@@ -1,49 +1,48 @@
-<div class = 'project-text'>
-  <p id="notice"><%= notice %></p>
-  <div class = 'jumbotron' style = 'background: white;'>
-  <div class = 'row'>
-    <div class = 'col-md-3'>
-      <div class = 'project-column'>
-        Project name
+  <div class = 'project-text'>
+    <p id="notice"><%= notice %></p>
+    <div class = 'jumbotron' style = 'background: white;'>
+    <div class = 'row'>
+      <div class = 'col-md-3'>
+        <div class = 'project-column'>
+          Project name
+        </div>
+        <div class = 'project-data'>
+          <%= @project.project_name %>
+        </div>
       </div>
-      <div class = 'project-data'>
-        <%= @project.project_name %>
-      </div>
-    </div>
 
-    <div class = 'col-md-3'>
-      <div class = 'project-column'>
-        Deadline
+      <div class = 'col-md-3'>
+        <div class = 'project-column'>
+          Deadline
+        </div>
+        <div class = 'project-data'>
+          <%= @project.deadline.strftime('%B %d, %Y') %>
+        </div>
       </div>
-      <div class = 'project-data'>
-        <%= @project.deadline.strftime('%B %d, %Y') %>
-      </div>
-    </div>
 
-    <div class = 'col-md-3'>
-      <div class = 'project-column'>
-        Coder
+      <div class = 'col-md-3'>
+        <div class = 'project-column'>
+          Coder
+        </div>
+        <div class = 'project-data'>
+          <%= @coder.coder_name %>
+        </div>
       </div>
-      <div class = 'project-data'>
-        <%= @coder.coder_name %>
-      </div>
-    </div>
-  </div></br>
+    </div></br>
 
-  <div>
-      <div class = 'project-column'>
-        Description
-      </div>
-      <div class = 'project-data'>
-        <%= @project.description %>
-      </div>
-  </div></br>
+    <div>
+        <div class = 'project-column'>
+          Description
+        </div>
+        <div class = 'project-data'>
+          <%= @project.description %>
+        </div>
+    </div></br>
 
-  <%= link_to 'GitHub', @project.github_link %> |
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Back', projects_path %> |
-  <%= link_to 'Add a snippet', new_snippet_path %>
-</div>
-</div>
-<%= hidden_field_tag :this_project_id, value: @project.id %>
-
+    <%= link_to 'GitHub', @project.github_link, :target => "_blank" %> |
+    <%= link_to 'Project Online', @project.browser_project_link, :target => "_blank" %> |
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %> |
+    <%= link_to 'Add a snippet', new_snippet_path(1) %>
+  </div>
+  </div>

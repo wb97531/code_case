@@ -4,12 +4,11 @@ feature 'displaying dashboard' do
   scenario 'displays link to project show page' do
   @coder_1 = FactoryGirl.create(:coder)
   @coder_2 = FactoryGirl.create(:coder)
-  @project_1 = FactoryGirl.create(:project, coder_id: @coder_1.id, description: 'This is the first project')
-  @project_2 = FactoryGirl.create(:project, coder_id: @coder_1.id, description: 'This is the second project')
-  @project_3 = FactoryGirl.create(:project, coder_id: @coder_2.id, description: 'This is the third project')
+  @project_1 = FactoryGirl.create(:project, coder_id: @coder_1.id, project_name: 'This is the first project')
+  @project_2 = FactoryGirl.create(:project, coder_id: @coder_1.id, project_name: 'This is the second project')
+  @project_3 = FactoryGirl.create(:project, coder_id: @coder_2.id, project_name: 'This is the third project')
 
   visit '/'
-  save_and_open_page
 
   fill_in 'Email', with: @coder_1.email
   fill_in 'Password', with: '987654321'
@@ -18,22 +17,23 @@ feature 'displaying dashboard' do
 
   visit "/dashboard/#{@coder_1.id}"
 
-  expect(page).to have_link(@project_2.description)
-  expect(page).to_not have_link(@project_3.description)
+  expect(page).to have_link(@project_2.project_name)
+  expect(page).to_not have_link(@project_3.project_name)
 
+  click_link @project_1.project_name
 
-  click_link @project_1.description
-
-  expect(page).to have_content(@project_1.description)
-  expect(page).to_not have_content(@project_2.description)
+  expect(page).to have_content(@project_1.project_name)
+  expect(page).to_not have_content(@project_2.project_name)
   end
 
   scenario 'displays coder links to all code snippet show pages' do
     @coder_1 = FactoryGirl.create(:coder)
     @coder_2 = FactoryGirl.create(:coder)
-    @code_snippet_1 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, objective: 'This is the first snippet')
-    @code_snippet_2 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, objective: 'This is the second snippet')
-    @code_snippet_3 = FactoryGirl.create(:snippet, coder_id: @coder_2.id, objective: 'This is the third snippet')
+    @project_1 = FactoryGirl.create(:project, coder_id: @coder_1.id, project_name: 'This is the first project')
+    @code_snippet_1 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, project_id: @coder_1.id, objective: 'This is the first snippet')
+    @code_snippet_2 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, project_id: @coder_1.id, objective: 'This is the second snippet')
+    @code_snippet_3 = FactoryGirl.create(:snippet, coder_id: @coder_2.id, project_id: @coder_1.id, objective: 'This is the third snippet')
+
 
     visit '/'
 

@@ -34,12 +34,14 @@ ul
 }
 .project-dashboard-title {
   font-size: 30px;
-  color: #F9FCC6;
+  color: #9AADCA;
   border: 1px transparent;
   background: #5F231F;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+  text-shadow: 1px 1px 1px black;
+
 }
 .project-dashboard-links {
   font-size: 20px;
@@ -50,12 +52,13 @@ ul
 }
 .snippet-dashboard-title {
   font-size: 30px;
-  color: #F9FCC6;
+  color: #9AADCA;
   border: 1px transparent;
   background: #96594E	;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+  text-shadow: 1px 1px 1px black;
 }
 .snippet-dashboard-links {
   font-size: 20px;
@@ -69,15 +72,15 @@ ul
   color:#737885;
   font-style: italic;
 }
-
 .course-dashboard-title {
   font-size: 30px;
-  color: #F9FCC6;
+  color: #9AADCA;
   border: 1px transparent;
   background: #C98F76;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+  text-shadow: 1px 1px 1px black;
 }
 .course-dashboard-links {
   font-size: 20px;
@@ -108,5 +111,10 @@ ul
 .project-data {
   color: #3F4134;
   font-weight: bold;
+}
 
+.btn-olive {
+  color: #ffffff;
+  background-color: #4C4F36;
+  border-color: #eea236;
 }

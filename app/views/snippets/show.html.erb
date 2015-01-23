@@ -17,12 +17,15 @@
   <dt>Objective:</dt>
   <dd><%= @snippet.objective %></dd>
 
-  <dt>Github file link:</dt>
-  <dd><a href = <%= @snippet.github_file_link %>><%= @snippet.github_file_link %></a></dd>
+  <dt>Github File Link:</dt>
+  <dd><%= link_to @snippet.github_file_link, @snippet.github_file_link, :target => '_blank' %></dd>
+
+  <dt>Project Online:</dt>
+  <dd><%= link_to @snippet.project.browser_project_link, @snippet.project.browser_project_link, :target => '_blank' %></dd>
 
   <div class = 'snippet-pic'>
-    <script src = <%= @snippet.image_name %>></script>
+    <script src=<%= @snippet.image_name %>></script>
   </div>
-  <a id = 'seeCodeButton' class = 'btn btn-primary' href = 'javascript:location.reload(true)'>See the code</a>
+  <%= link_to 'See the code',  'javascript:location.reload(true)', :class => 'btn btn-primary' %>
 </dl>
 

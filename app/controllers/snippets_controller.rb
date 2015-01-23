@@ -26,6 +26,8 @@ class SnippetsController < ApplicationController
   # POST /snippets.json
   def create
     @snippet = Snippet.new(snippet_params)
+    @project = Project.find_by(project_name: params[:project_name])
+    @snippet.project_id = @project.id
     respond_to do |format|
       if @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }

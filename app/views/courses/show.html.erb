@@ -25,7 +25,7 @@
     <dd><%= @course.instructor %></dd>
 
     <dt>Start Date:</dt>
-    <dd><%= @course.start_date.strftime('%B %d, %Y') %></dd>
+    <dd><%= @course.start_date ? @course.start_date.strftime('%B %d, %Y') : '' %></dd>
 
     <dt>Completed:</dt>
     <dd><%= @course.completion_date.strftime('%B %d, %Y') %></dd>
