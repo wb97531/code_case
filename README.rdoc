@@ -5,7 +5,7 @@ for programming job seekers to share their code highlights, projects and educati
 
 #### Versions:
 
-- ruby 2.1.2
+- ruby 2.1.4
 - Rails 4.1.7
 
 #### Features:

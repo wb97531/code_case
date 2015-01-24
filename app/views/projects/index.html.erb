@@ -22,13 +22,9 @@
         <td><%= project.priority %></td>
         <td><%= project.coder_id %></td>
         <td><%= project.current %></td>
-        <% if current_coder %>
-          <td><%= link_to 'Show', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
-          <% false %>
-        <% end %>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

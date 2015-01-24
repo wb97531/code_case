@@ -1,13 +1,11 @@
 <div class="page-header">
-  <% if current_coder %>
-    <%= link_to snippets_path, :class => 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list-alt"></span>
-      Back
-    <% end %>
-    <%= link_to edit_snippet_path(@snippet), :class => 'btn btn-primary' do %>
-      <span class="glyphicon glyphicon-pencil"></span>
-      Edit
-    <% end %>
+  <%= link_to snippets_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_snippet_path(@snippet), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
   <% end %>
   <h1>Code Snippet</h1>
 </div>
