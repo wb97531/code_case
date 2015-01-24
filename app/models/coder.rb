@@ -1,4 +1,5 @@
 class Coder < ActiveRecord::Base
+
   has_secure_password
 
   validates :coder_name, presence: true, uniqueness: true
@@ -8,4 +9,8 @@ class Coder < ActiveRecord::Base
   has_many :projects
   has_many :snippets
   has_many :courses
+
+  def gravatar_id
+    Digest::MD5::hexdigest(email.downcase)
+  end
 end
