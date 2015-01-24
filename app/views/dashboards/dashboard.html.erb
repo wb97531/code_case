@@ -5,7 +5,7 @@
   <p class='project-dashboard-title'>Projects</p>
   <ul class='project-dashboard-links'>
     <% @projects.each do |project| %>
-      <li><%= link_to project.project_name, project_path(project.id) %></li>
+      <li id="<%= dom_id(project) %>"><%= link_to project.project_name, project_path(project.id) %></li>
     <% end %>
   </ul>
 </div>
@@ -15,7 +15,7 @@
     <% @snippets.each do |snippet| %>
       <div class = 'row'>
         <div class = 'col-md-8'>
-          <li><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
+          <li id="<%= dom_id(snippet) %>"><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
         </div>
         <div class = 'col-md-3'>
           <p class = 'snippet-dashboard-info pull-right'> from project:  <strong><%= snippet.project.project_name %></strong></p>
@@ -28,7 +28,7 @@
   <p class='course-dashboard-title'>Education</p>
   <ul class='course-dashboard-links'>
     <% @courses.each do |course| %>
-      <li><%= link_to course.title, course_path(course.id) %></li>
+      <li id="<%= dom_id(course) %>"><%= link_to course.title, course_path(course.id) %></li>
     <% end %>
   </ul>
 </div>

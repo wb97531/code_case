@@ -26,9 +26,16 @@ class SessionsController < ApplicationController
   end
 
   def view_coder
-    Coder.find_by(email: params[:email]) ? coder_id = Coder.find_by(email: params[:email]).id : false
-    if coder_id
-      redirect_to dashboard_path(coder_id)
+    if Coder.find_by(email: params[:email])
+      @coder = Coder.find_by(email: params[:email])
+    elsif
+      @coder = Coder.find_by(email: session[:coders_email])
+    else
+      @coder = nil
+    end
+    if @coder
+      session[:coders_email] = @coder.email
+      redirect_to dashboard_path(@coder.id)
     else
       redirect_to guest_path, notice: 'We can\'t locate a coder with that email address.'
     end

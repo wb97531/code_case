@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+
   def dashboard
     @coder = Coder.find(params[:id])
     current_coder ? @projects = current_coder.projects : @projects = @coder.projects
