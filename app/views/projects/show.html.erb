@@ -41,10 +41,10 @@
 
       <%= link_to 'GitHub', @project.github_link, :target => "_blank" %> |
       <%= link_to 'Project Online', @project.browser_project_link, :target => "_blank" %> |
-      <% if current_coder %>
-        <%= link_to 'Edit', edit_project_path(@project) %> |
-        <%= link_to 'Back', projects_path %> |
-        <%= link_to 'Add a snippet', new_snippet_path(1) %>
-      <% end %>
+      <!--<%# if current_coder %>-->
+        <%#= link_to 'Edit', edit_project_path(@project) %> |
+        <%#= link_to 'Back', projects_path %> |
+        <!--<%#= link_to 'Add a snippet', new_snippet_path(1) %>-->
+      <!--<%# end %>-->
     </div>
   </div>
