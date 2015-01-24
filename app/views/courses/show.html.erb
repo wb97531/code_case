@@ -1,4 +1,5 @@
 <div class="page-header">
+  <% if current_coder %>
     <%= link_to courses_path, :class => 'btn btn-default' do %>
       <span class="glyphicon glyphicon-list-alt"></span>
       Back
@@ -7,6 +8,7 @@
       <span class="glyphicon glyphicon-pencil"></span>
       Edit
     <% end %>
+  <% end %>
   <h1>Course</h1>
 </div>
 <div class = 'jumbotron' style = 'background: white'>
