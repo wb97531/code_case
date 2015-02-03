@@ -17,6 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     if coder = current_coder
       session[:coder_id] = nil
+      session[:coders_email] = nil
       redirect_to login_path,
                   notice: "#{coder.email} has been logged out."
     end
