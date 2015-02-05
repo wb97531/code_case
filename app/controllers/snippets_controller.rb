@@ -26,8 +26,9 @@ class SnippetsController < ApplicationController
   # POST /snippets.json
   def create
     @snippet = Snippet.new(snippet_params)
-    @project = Project.first #Project.find_by(project_name: params[:project_name])
+    @project = Project.find_by(project_name: params[:project_name])
     @snippet.project_id = @project.id
+    @snippet.coder_id = current_coder.id
     respond_to do |format|
       if @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully created.' }
@@ -44,6 +45,9 @@ class SnippetsController < ApplicationController
   def update
     respond_to do |format|
       if @snippet.update(snippet_params)
+        @project = Project.find_by(project_name: params[:project_name])
+        @snippet.project_id = @project.id
+        @snippet.save
         format.html { redirect_to @snippet, notice: 'Snippet was successfully updated.' }
         format.json { render :show, status: :ok, location: @snippet }
       else
@@ -67,10 +71,6 @@ class SnippetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_snippet
       @snippet = Snippet.find(params[:id])
-    end
-
-    def set_project
-      @project = Project.first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

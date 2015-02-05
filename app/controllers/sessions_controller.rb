@@ -20,6 +20,10 @@ class SessionsController < ApplicationController
       session[:coders_email] = nil
       redirect_to login_path,
                   notice: "#{coder.email} has been logged out."
+    else
+	    session[:coder_id] = nil
+	    session[:coders_email] = nil
+	    redirect_to login_path
     end
   end
 

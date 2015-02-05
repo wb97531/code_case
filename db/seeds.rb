@@ -32,29 +32,29 @@ Course.create title: 'Building the Toolbelt of a Junior Developer',
               start_date: DateTime.new(2014,6,5),
               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
 
-# Course.create title: 'Java Essential Training',
-#               completion_date: DateTime.new(2015,1,22),
-#               certificate: true,
-#               completed: true,
-#               coder_id: 500,
-#               place: 'lynda.com',
-#               instructor: 'David Gassner',
-#               start_date: DateTime.new(2011,1,5),
-#               description: 'lynda.com\'s description:  This course demonstrates how to install both Java and the Eclipse IDE and dives into the particulars of programming. The course also explains the fundamentals of Java, from creating simple variables, assigning values, and declaring methods to working with strings, arrays, and subclasses; reading and writing to text files; and implementing object oriented programming concepts.
-# Topics include:
-# Understanding the history and principles of Java
-# Installing Eclipse and Java
-# Compiling and running from the command line
-# Managing memory and performing garbage collection
-# Declaring and initializing variables
-# Writing conditional code
-# Building and parsing strings
-# Debugging and exception handling
-# Using simple arrays
-# Creating custom classes
-# Working with encapsulation, inheritance, and polymorphism
-# Managing files
-# Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-Training/86005-2.html'
+Course.create title: 'Java Essential Training',
+              completion_date: DateTime.new(2015,1,22),
+              certificate: true,
+              completed: true,
+              coder_id: 500,
+              place: 'lynda.com',
+              instructor: 'David Gassner',
+              start_date: DateTime.new(2011,1,5),
+              description: 'lynda.com\'s description:  This course demonstrates how to install both Java and the Eclipse IDE and dives into the particulars of programming. The course also explains the fundamentals of Java, from creating simple variables, assigning values, and declaring methods to working with strings, arrays, and subclasses; reading and writing to text files; and implementing object oriented programming concepts.
+Topics include:
+Understanding the history and principles of Java
+Installing Eclipse and Java
+Compiling and running from the command line
+Managing memory and performing garbage collection
+Declaring and initializing variables
+Writing conditional code
+Building and parsing strings
+Debugging and exception handling
+Using simple arrays
+Creating custom classes
+Working with encapsulation, inheritance, and polymorphism
+Managing files
+Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-Training/86005-2.html'
 
 Project.create project_name: 'Code Case',
                github_link: 'https://github.com/wb97531/code_case',

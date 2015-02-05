@@ -1,9 +1,9 @@
 <% if current_coder %>
-  <%= link_to 'Back', courses_path, :class => 'btn btn-default' do %>
+  <%= link_to courses_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
   <% end %>
-  <%= link_to 'Edit', edit_course_path(@course), :class => 'btn btn-primary' do %>
+  <%= link_to edit_course_path(@course), :class => 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
