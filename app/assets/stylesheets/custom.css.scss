@@ -26,6 +26,10 @@ ul
 .nav-pad {
   padding: 50px;
 }
+.login-container {
+  width: 500px;
+  height: 50px;
+}
 .container-dashboard {
     margin-right: auto;
     margin-left: auto;
@@ -116,6 +120,16 @@ ul
   background-color: #4C4F36;
   border-color: #eea236;
 }
+.btn-olive-lt {
+  color: #ffffff;
+  background-color: #697054;
+  border-color: #eea236;
+}
+.btn-reverse-olive {
+  color: #697054;
+  background-color: #ffffff;
+  border-color: #eea236;
+}
 .gravatar {
   height: 0px;
 }
@@ -124,9 +138,4 @@ ul
 }
 .center-this {
   text-align: center;
-}
-.btn-olive-lt {
-  color: #ffffff;
-  background-color: #697054;
-  border-color: #eea236;
 }

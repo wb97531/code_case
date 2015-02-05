@@ -1,10 +1,19 @@
 <%= form_tag login_path do %>
-  <div class="pad">
-    <%= link_to 'View Dashboard', guest_path, {class: 'btn-lg btn-olive'} %>
+  <div class="login-container">
+    <div class="col-md-6">
+      <div class="pad">
+        <%= link_to 'Guest', guest_path, {class: 'btn-lg btn-olive'} %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="pad">
+        <%= link_to 'Signup', new_coder_path, { class: 'btn-lg btn-reverse-olive' } %>
+      </div>
+    </div>
   </div>
   <div class="pad">
-  <div class='jumbotron round-this-jumbotron'>
-    <p>
+    <div class='jumbotron round-this-jumbotron'>
+      <p>
         <%= label_tag :email %></br>
         <%= text_field_tag :email, nil, class: 'round-this-field' %>
       </p>
@@ -13,8 +22,8 @@
         <%= password_field_tag :password, nil, class: 'round-this-field' %>
       </p>
       <p>
-        <%= submit_tag 'Login', { class: 'btn btn-primary' } %>
+        <%= submit_tag 'Login', { class: 'btn-lg btn-primary' } %>
       </p>
-  </div>
+    </div>
   </div>
 <% end %>

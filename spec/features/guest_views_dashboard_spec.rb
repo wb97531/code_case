@@ -7,7 +7,7 @@ feature 'guest viewing coder dashboard' do
 
     visit '/'
 
-    click_link 'View Dashboard'
+    click_link 'Guest'
 
     fill_in 'email', with: 'wendy@gmail.com'
 
@@ -22,7 +22,7 @@ feature 'guest viewing coder dashboard' do
 
     visit '/'
 
-    click_link 'View Dashboard'
+    click_link 'Guest'
 
     fill_in 'email', with: 'w@gmail.com'
 
@@ -39,7 +39,7 @@ feature 'guest viewing coder dashboard' do
 
     expect(page).to_not have_link('Coder Dashboard')
 
-    click_link 'View Dashboard'
+    click_link 'Guest'
 
     fill_in 'email', with: 'wendy@gmail.com'
 
