@@ -12,15 +12,19 @@
   <% end %>
     <div class="jumbotron">
       <div class="container">
-        <div class="col-md-1">
-          <%= link_to 'create gist', "https://gist.github.com/", target: "_blank", :class => "btn btn-default" %>
-        </div></br>
-        <div class="col-md-5">
-          <%= f.label :image_name, 'Gist https with .js extension', :class => "col-md-10" %>
+        <div class="container center-this">
+          <%= link_to 'create gist', "https://gist.github.com/", target: "_blank", :class => "btn-lg btn-olive-lt" %>
         </div>
-        <div class="col-md-6">
-          <%= f.text_field :image_name, placeholder: 'example:   https://gist.github.com/wb97531/0bc8d43411866be3eaf1.js',
-                               :class => "form-control" %>
+        <div class="container">
+          <div class="col-md-5">
+            <%= f.label :image_name, 'Gist https with .js extension', :class => "col-md-10" %>
+          </div>
+        </div>
+        <div class="container">
+          <div class="col-md-6">
+              <%= f.text_field :image_name, placeholder: 'example:   https://gist.github.com/wb97531/0bc8d43411866be3eaf1.js',
+                                   :class => "form-control" %>
+          </div>
         </div>
       </div>
     </div>
