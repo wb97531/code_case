@@ -1,9 +1,11 @@
 <%= form_tag view_coder_path do %>
-  <div class='jumbotron round-this-jumbotron'>
+  <div class="pad">
+    <div class='jumbotron round-this-jumbotron'>
 
-    <%= label_tag :email, 'Enter the Coder\'s email' %></br>
-    <%= text_field_tag :email %></br>
+      <%= label_tag :email, 'Enter the Coder\'s email' %></br>
+      <%= text_field_tag :email, nil, class: 'round-this-field' %></br>
 
-    <%= submit_tag 'See what they\'re working on', { class: 'btn btn-olive' } %>
+      <%= submit_tag 'See what they\'re working on', { class: 'btn btn-olive' } %>
+    </div>
   </div>
 <% end %>

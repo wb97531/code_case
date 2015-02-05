@@ -58,7 +58,7 @@ Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-
 
 Project.create project_name: 'Code Case',
                github_link: 'https://github.com/wb97531/code_case',
-               deadline: DateTime.new(2014,12,30),
+               deadline: DateTime.new(2015,6,30),
                description: 'An app to show what a coder has done and has been working on',
                priority: 1,
                coder_id: 500,

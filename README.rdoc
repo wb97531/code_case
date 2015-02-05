@@ -6,19 +6,15 @@ for programming job seekers to share their code highlights, projects and educati
 #### Versions:
 
 - ruby 2.1.4
-- Rails 4.1.7
+- Rails 4.1.6
 
 #### Features:
 
-(to be implemented)
+A guest can view, a coder can create and update:
 
 Projects
 Code Highlights
 Education
--
-
-(completed)
-
 
 #### Usage:
 

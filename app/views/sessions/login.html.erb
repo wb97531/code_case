@@ -1,6 +1,10 @@
 <%= form_tag login_path do %>
+  <div class="pad">
+    <%= link_to 'View Dashboard', guest_path, {class: 'btn-lg btn-olive'} %>
+  </div>
+  <div class="pad">
   <div class='jumbotron round-this-jumbotron'>
-      <p>
+    <p>
         <%= label_tag :email %></br>
         <%= text_field_tag :email, nil, class: 'round-this-field' %>
       </p>
@@ -12,7 +16,5 @@
         <%= submit_tag 'Login', { class: 'btn btn-primary' } %>
       </p>
   </div>
-  <div>
-    <%= link_to 'View Dashboard', guest_path, {class: 'btn btn-olive'} %>
   </div>
 <% end %>
