@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="pull-right">
   <%= link_to coders_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
@@ -7,14 +7,18 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show coder</h1>
 </div>
-
-<dl class="dl-horizontal">
-  <dt>Coder name:</dt>
-  <dd><%= @coder.coder_name %></dd>
-
-  <dt>Email:</dt>
-  <dd><%= @coder.email %></dd>
-
-</dl>
+<h3>
+  <dl class="dl-left">
+    <dt>Coder name:</dt>
+    <dd style="color: white;"><%= @coder.coder_name %></dd>
+  </dl>
+  <dl class="dl-left">
+    <dt>Email:</dt>
+    <dd style="color: white;"><%= @coder.email %></dd>
+  </dl>
+  <dl class="dl-left">
+    <dt>Dashboard Image</dt>
+    <dd><%= link_to 'Create', "http://en.gravatar.com/", class: 'btn btn-maroon-white', :target => "_blank" %></dd>
+  </dl>
+</h3>
