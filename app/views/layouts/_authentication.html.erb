@@ -1,10 +1,10 @@
 <% if current_coder %>
-  <li><%= link_to "#{current_coder.coder_name}", coder_path(500) %></li>
-  <li><%= link_to 'Dashboard', dashboard_path(current_coder.id) %></li>
-  <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+  <li class="pad-link"><%= link_to "#{current_coder.coder_name}", coder_path(500) %></li>
+  <li class="pad-link"><%= link_to 'Dashboard', dashboard_path(current_coder.id) %></li>
+  <li class="pad-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
 <% else %>
   <% if session[:coders_email] %>
-    <li><%= link_to 'Coder Dashboard', view_coder_path, method: 'POST' %></li>
-    <li><%= link_to 'Done', logout_path, method: :delete %></li>
+    <li class="pad-link"><%= link_to 'Coder Dashboard', view_coder_path, method: 'POST' %></li>
+    <li class="pad-link"><%= link_to 'Done', logout_path, method: :delete %></li>
   <% end %>
 <% end %>
