@@ -27,7 +27,7 @@
             <td><%= course.completion_date %></td>
             <td><%= course.certificate %></td>
             <td><%= course.completed %></td>
-            <td><%= course.coder_id %></td>
+            <td><%= course.coder.coder_name %></td>
             <td><%= link_to 'Show', course %></td>
         <td><%= link_to 'Edit', edit_course_path(course) %></td>
         <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
