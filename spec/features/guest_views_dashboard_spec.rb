@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'guest viewing coder dashboard' do
-  scenario 'guest can view a coder dashboard by email' do
+feature 'guest viewing coder display' do
+  scenario 'guest can view a coder display by email' do
     coder = FactoryGirl.create(:coder, email: 'wendy@gmail.com', id: 1000)
     FactoryGirl.create(:project, coder_id: 1000, project_name: 'silly project')
 
@@ -16,7 +16,7 @@ feature 'guest viewing coder dashboard' do
     expect(page).to have_content('silly project')
   end
 
-  scenario 'Guest can view a coder dashboard by email' do
+  scenario 'Guest can view a coder display by email' do
     coder = FactoryGirl.create(:coder, email: 'wendy@gmail.com', id: 1000)
     FactoryGirl.create(:project, coder_id: 1000, project_name: 'silly project')
 
@@ -31,17 +31,17 @@ feature 'guest viewing coder dashboard' do
     expect(page).to have_content('We can\'t locate a coder with that email address.')
   end
 
-  scenario 'guest can go back to dashboard with navbar link' do
-    coder = FactoryGirl.create(:coder, email: 'wendy@gmail.com', id: 1000, coder_name: 'Tracy')
+  scenario 'guest can go back to display with navbar link' do
+    coder = FactoryGirl.create(:coder, email: 'example@gmail.com', id: 1000, coder_name: 'Tracy')
     project = FactoryGirl.create(:project, coder_id: 1000, project_name: 'silly project')
 
     visit '/'
 
-    expect(page).to_not have_link('Coder Dashboard')
+    expect(page).to_not have_link('Display')
 
     click_link 'Guest'
 
-    fill_in 'email', with: 'wendy@gmail.com'
+    fill_in 'email', with: 'example@gmail.com'
 
     click_button 'See what they\'re working on'
 
@@ -49,8 +49,7 @@ feature 'guest viewing coder dashboard' do
       click_link 'silly project'
     end
 
-    expect(page).to have_content('Tracy')
-    expect(page).to have_link('Coder Dashboard')
-
+    expect(page).to have_content('silly project')
+    expect(page).to have_link('Display')
   end
 end
