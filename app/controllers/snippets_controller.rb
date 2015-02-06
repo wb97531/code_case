@@ -5,11 +5,8 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-		if current_coder
-      @snippets = Snippet.where(coder_id: current_coder.id)
-		else
+		current_coder ? @snippets = Snippet.where(coder_id: current_coder.id) :
 			@snippets = Snippet.where(coder_id: 1000)
-		end
   end
 
   # GET /snippets/1

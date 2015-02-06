@@ -4,7 +4,6 @@ class Coder < ActiveRecord::Base
 
   validates :coder_name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
-  validates :password, length: { in: 6..100 }
 
   has_many :projects
   has_many :snippets
