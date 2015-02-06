@@ -76,3 +76,34 @@ Snippet.create objective: 'Loading gist image on snippet show page',
                github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/views/snippets/show.html.erb',
                project_id: 1,
                coder_id: 500
+
+Snippet.create objective: 'sample of a snippet',
+               image_name: 'https://gist.github.com/sample_coder/0bc8d43411866be3eaf1.js',
+               github_file_link: 'https://github.com/sample_coder/code_case/blob/master/app/views/snippets/show.html.erb',
+               project_id: 1000,
+               coder_id: 1000
+
+Project.create project_name: 'Sample Project',
+               github_link: 'https://github.com/sample_coder/code_case',
+               deadline: DateTime.new(2016,6,30),
+               description: 'An app to show what a coder has done and has been working on',
+               priority: 1,
+               coder_id: 1000,
+               current: true,
+               browser_project_link: 'https://sample_app.herokuapp.com/'
+
+Course.create title: 'Sample Course',
+              completion_date: DateTime.new(2016,1,22),
+              certificate: true,
+              completed: true,
+              coder_id: 1000,
+              place: 'sample.com',
+              instructor: 'Sample Instructor',
+              start_date: DateTime.new(2011,1,5),
+              description: 'sample description of course'
+
+Coder.create id: 1000,
+             coder_name: 'Sample',
+             password:  'codingisfun',
+             password: 'codingisfun',
+             email: 'example@gmail.com'

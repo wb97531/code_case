@@ -1,5 +1,6 @@
 class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
+  before_action :check_current_coder, only: [:edit, :update, :destroy]
 
   # GET /snippets
   # GET /snippets.json
@@ -7,7 +8,7 @@ class SnippetsController < ApplicationController
 		if current_coder
       @snippets = Snippet.where(coder_id: current_coder.id)
 		else
-			redirect_to '/'
+			@snippets = Snippet.where(coder_id: 1000)
 		end
   end
 
@@ -81,4 +82,12 @@ class SnippetsController < ApplicationController
     def snippet_params
       params.require(:snippet).permit(:objective, :image_name, :github_file_link, :project_id, :coder_id)
     end
+
+	  def check_current_coder
+		  if current_coder
+		  else
+			  redirect_to '/'
+		  end
+	  end
+
 end

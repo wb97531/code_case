@@ -11,7 +11,7 @@ feature 'adding projects and courses' do
 
     click_button 'Login'
 
-    click_link 'Dashboard'
+    visit projects_path
 
     # click_link 'Add Project'
     #

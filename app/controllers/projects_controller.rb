@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :check_current_coder, only: [:edit, :update, :destroy]
 
   def index
 		if current_coder
 			@projects = Project.where(coder_id: current_coder.id)
 		else
-			redirect_to '/'
+			@projects = Project.where(coder_id: 1000)
 		end
   end
 
@@ -63,4 +64,11 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:project_name, :github_link, :deadline, :description, :priority, :coder_id, :current)
     end
+
+	  def check_current_coder
+		  if current_coder
+		  else
+			  redirect_to '/'
+		  end
+	  end
 end

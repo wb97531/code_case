@@ -1,9 +1,15 @@
 class CodersController < ApplicationController
   before_action :set_coder, only: [:show, :edit, :update, :destroy]
+  before_action :check_current_coder, only: [:show, :edit, :update, :destroy]
+
   # GET /coders
   # GET /coders.json
   def index
-    @coders = Coder.all
+		if current_coder
+      @coders = Coder.where(id: current_coder.id)
+		else
+			@coders = Coder.where(id: 1000)
+		end
   end
 
   # GET /coders/1
@@ -71,4 +77,11 @@ class CodersController < ApplicationController
     def coder_params
       params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
     end
+
+		def check_current_coder
+			if current_coder
+			else
+				redirect_to '/'
+			end
+		end
 end

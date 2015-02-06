@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :check_current_coder, only: [:edit, :update, :destroy]
 
   # GET /courses
   # GET /courses.json
@@ -7,7 +8,7 @@ class CoursesController < ApplicationController
 		if current_coder
       @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse
 		else
-			redirect_to '/'
+			@courses = Course.where(coder_id: 1000)
 		end
   end
 
@@ -76,4 +77,11 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:title, :completion_date, :certificate, :completed, :coder_id, :place,
                                      :instructor, :start_date, :description)
     end
+
+	  def check_current_coder
+		  if current_coder
+		  else
+			  redirect_to '/'
+		  end
+	  end
 end
