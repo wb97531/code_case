@@ -3,11 +3,8 @@ class ProjectsController < ApplicationController
   before_action :check_current_coder, only: [:edit, :update, :destroy]
 
   def index
-		if current_coder
-			@projects = Project.where(coder_id: current_coder.id)
-		else
+		current_coder ? @projects = Project.where(coder_id: current_coder.id) :
 			@projects = Project.where(coder_id: 1000)
-		end
   end
 
   def show

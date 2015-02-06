@@ -5,11 +5,8 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-		if current_coder
-      @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse
-		else
+		current_coder ? @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse :
 			@courses = Course.where(coder_id: 1000)
-		end
   end
 
   # GET /courses/1

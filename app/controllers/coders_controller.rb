@@ -5,11 +5,7 @@ class CodersController < ApplicationController
   # GET /coders
   # GET /coders.json
   def index
-		if current_coder
-      @coders = Coder.where(id: current_coder.id)
-		else
-			@coders = Coder.where(id: 1000)
-		end
+		current_coder ? @coders = Coder.where(id: current_coder.id) : @coders = Coder.where(id: 1000)
   end
 
   # GET /coders/1
@@ -75,7 +71,7 @@ class CodersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coder_params
-      params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
+		  params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
     end
 
 		def check_current_coder

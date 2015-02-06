@@ -23,7 +23,7 @@
             <td><%= snippet.objective %></td>
             <td><%= snippet.image_name %></td>
             <td><%= snippet.github_file_link %></td>
-            <td><%= snippet.project_id %></td>
+            <td><%= snippet.project.project_name %></td>
             <% if current_coder %>
               <td><%= link_to 'Show', snippet %></td>
               <td><%= link_to 'Edit', edit_snippet_path(snippet) %></td>
