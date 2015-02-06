@@ -4,7 +4,11 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.all
+		if current_coder
+      @snippets = Snippet.where(coder_id: current_coder.id)
+		else
+			redirect_to '/'
+		end
   end
 
   # GET /snippets/1

@@ -4,7 +4,11 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.order(:completion_date).reverse
+		if current_coder
+      @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse
+		else
+			redirect_to '/'
+		end
   end
 
   # GET /courses/1

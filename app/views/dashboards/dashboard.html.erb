@@ -2,6 +2,13 @@
   <%= profile_image_for(@coder) %>
 </div>
 <div class='container-dashboard'>
+  <% if current_coder %>
+    <%= link_to 'Projects', projects_path, { class: 'btn btn-reverse-olive' } %>
+    <%= link_to 'Snippets', snippets_path, { class: 'btn btn-reverse-olive' } %>
+    <%= link_to 'Courses', courses_path, { class: 'btn btn-reverse-olive' } %>
+  <% end %>
+</div></br>
+<div class='container-dashboard'>
   <p class='project-dashboard-title'>Projects</p>
   <ul class='project-dashboard-links'>
     <% @projects.each do |project| %>

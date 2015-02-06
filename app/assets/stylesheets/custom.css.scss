@@ -139,3 +139,11 @@ ul
 .center-this {
   text-align: center;
 }
+.project-table, td, th {
+  border: 1px solid #AA776E;
+  font-weight: bold;
+}
+th {
+  background-color: #AA776E;
+  color: white;
+}
