@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      params.require(:project).permit(:project_name, :github_link, :deadline, :description, :priority, :coder_id, :current)
+      params.require(:project).permit(:project_name, :github_link, :browser_project_link, :deadline, :description, :priority, :coder_id, :current)
     end
 
 	  def check_current_coder
