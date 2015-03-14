@@ -31,4 +31,6 @@
     </tbody>
   </table><br>
 </div>
-<%= link_to 'New Project', new_project_path, { class: 'btn btn-primary' } %>
+<% if current_coder %>
+  <%= link_to 'New Project', new_project_path, { class: 'btn btn-primary' } %>
+<% end %>>
