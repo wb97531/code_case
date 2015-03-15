@@ -60,7 +60,6 @@ feature 'Making edits' do
     expect(page).to_not have_content('Editing')
   end
 
-
   scenario "guest is redirected to login when trying to add, edit or delete coder's work" do
     @coder = FactoryGirl.create(:coder)
     @project = FactoryGirl.create(:project, coder_id: @coder.id)
