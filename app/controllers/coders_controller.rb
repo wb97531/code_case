@@ -74,10 +74,11 @@ class CodersController < ApplicationController
 		  params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
     end
 
-		def check_current_coder
-			if current_coder
-			else
-				redirect_to '/'
-			end
-		end
+    def check_current_coder
+      if current_coder == nil
+        redirect_to '/'
+      elsif current_coder.id != @coder.id
+        redirect_to '/'
+      end
+    end
 end

@@ -80,11 +80,12 @@ class SnippetsController < ApplicationController
       params.require(:snippet).permit(:objective, :image_name, :github_file_link, :project_id, :coder_id)
     end
 
-	  def check_current_coder
-		  if current_coder
-		  else
-			  redirect_to '/'
-		  end
-	  end
+    def check_current_coder
+      if current_coder == nil
+        redirect_to '/'
+      elsif current_coder.id != @snippet.coder_id
+        redirect_to '/'
+      end
+    end
 
 end
