@@ -75,10 +75,11 @@ class CoursesController < ApplicationController
                                      :instructor, :start_date, :description)
     end
 
-	  def check_current_coder
-		  if current_coder
-		  else
-			  redirect_to '/'
-		  end
-	  end
+    def check_current_coder
+      if current_coder == nil
+        redirect_to '/'
+      elsif current_coder.id != @course.coder_id
+        redirect_to '/'
+      end
+    end
 end

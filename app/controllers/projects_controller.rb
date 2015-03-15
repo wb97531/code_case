@@ -62,10 +62,11 @@ class ProjectsController < ApplicationController
       params.require(:project).permit(:project_name, :github_link, :browser_project_link, :deadline, :description, :priority, :coder_id, :current)
     end
 
-	  def check_current_coder
-		  if current_coder
-		  else
-			  redirect_to '/'
-		  end
-	  end
+    def check_current_coder
+      if current_coder == nil
+        redirect_to '/'
+      elsif current_coder.id != @project.coder_id
+        redirect_to '/'
+      end
+    end
 end
