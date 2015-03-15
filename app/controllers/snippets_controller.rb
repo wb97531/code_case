@@ -5,8 +5,8 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-		current_coder ? @snippets = Snippet.where(coder_id: current_coder.id) :
-			@snippets = Snippet.where(coder_id: 1000)
+    current_coder ? @snippets = Snippet.where(coder_id: current_coder.id) :
+      @snippets = Snippet.where(coder_id: 1000)
   end
 
   # GET /snippets/1
@@ -70,22 +70,22 @@ class SnippetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_snippet
-      @snippet = Snippet.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def snippet_params
-      params.require(:snippet).permit(:objective, :image_name, :github_file_link, :project_id, :coder_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_snippet
+    @snippet = Snippet.find(params[:id])
+  end
 
-    def check_current_coder
-      if current_coder == nil
-        redirect_to '/'
-      elsif current_coder.id != @snippet.coder_id
-        redirect_to '/'
-      end
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def snippet_params
+    params.require(:snippet).permit(:objective, :image_name, :github_file_link, :project_id, :coder_id)
+  end
 
+  def check_current_coder
+    if current_coder.nil?
+      redirect_to '/'
+    elsif current_coder.id != @snippet.coder_id
+      redirect_to '/'
+    end
+  end
 end

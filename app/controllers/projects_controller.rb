@@ -3,8 +3,8 @@ class ProjectsController < ApplicationController
   before_action :check_current_coder, only: [:edit, :update, :destroy]
 
   def index
-		current_coder ? @projects = Project.where(coder_id: current_coder.id) :
-			@projects = Project.where(coder_id: 1000)
+    current_coder ? @projects = Project.where(coder_id: current_coder.id) :
+      @projects = Project.where(coder_id: 1000)
   end
 
   def show
@@ -21,6 +21,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.coder_id = current_coder.id
     @project.current = true
     respond_to do |format|
       if @project.save
@@ -54,19 +55,20 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def set_project
-      @project = Project.find(params[:id])
-    end
 
-    def project_params
-      params.require(:project).permit(:project_name, :github_link, :browser_project_link, :deadline, :description, :priority, :coder_id, :current)
-    end
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    def check_current_coder
-      if current_coder == nil
-        redirect_to '/'
-      elsif current_coder.id != @project.coder_id
-        redirect_to '/'
-      end
+  def project_params
+    params.require(:project).permit(:project_name, :github_link, :browser_project_link, :deadline, :description, :priority, :coder_id, :current)
+  end
+
+  def check_current_coder
+    if current_coder.nil?
+      redirect_to '/'
+    elsif current_coder.id != @project.coder_id
+      redirect_to '/'
     end
+  end
 end

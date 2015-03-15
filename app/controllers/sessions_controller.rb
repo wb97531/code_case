@@ -21,8 +21,8 @@ class SessionsController < ApplicationController
       redirect_to login_path,
                   notice: "#{coder.email} has been logged out."
     else
-	    session[:coders_email] = nil
-	    redirect_to login_path
+      session[:coders_email] = nil
+      redirect_to login_path
     end
   end
 
@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
   def view_coder
     if Coder.find_by(email: params[:email])
       @coder = Coder.find_by(email: params[:email])
-    elsif
+    elsif session[:coders_email]
       @coder = Coder.find_by(email: session[:coders_email])
     else
       @coder = nil
@@ -44,5 +44,4 @@ class SessionsController < ApplicationController
       redirect_to guest_path, notice: 'We can\'t locate a coder with that email address.'
     end
   end
-
 end
