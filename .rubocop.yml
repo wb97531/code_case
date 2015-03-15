@@ -17,3 +17,6 @@ RegexpLiteral:
 AllCops:
   Excludes:
     - db/schema.rb
+
+StringLiterals:
+  Enabled: false
