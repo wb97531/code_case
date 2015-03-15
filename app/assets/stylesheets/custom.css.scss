@@ -1,3 +1,15 @@
+$burgundy : #5F231F;
+$beige : #C98F76;
+$cream : #E2C3A6;
+$elephant : #737885;
+$light-blue : #9AADCA;
+$mauve : #96594E;
+$olive : #3B4421;
+$olive-medium : #4C4F36;
+$olive-light : #697054;
+$sand : #AA776E;
+$steel : #3F4134;
+
 ul
 {
   list-style-type: none;
@@ -17,7 +29,7 @@ ul
   width: 450px;
 }
 .nav-text {
-  color: #C98F76;
+  color: $beige;
   padding: 15px;
 }
 .center-this {
@@ -33,9 +45,9 @@ ul
 .dashboard-name {
   text-align: center;
   text-weight: bold;
-  color: #96594E;
+  color: $mauve;
   text-shadow: 2px 2px 2px white;
-//  background: #F9FCC6;
+  //  background: #F9FCC6;
   border: 1px solid;
   border-radius: 5px;
   border: transparent;
@@ -43,16 +55,16 @@ ul
   width: 300px;
 }
 .container-dashboard {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 100px;
-    padding-right: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .project-dashboard-title {
   font-size: 30px;
-  color: #9AADCA;
+  color: $light-blue;
   border: 1px transparent;
-  background: #5F231F;
+  background: $burgundy;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -60,16 +72,15 @@ ul
 }
 .project-dashboard-links {
   font-size: 20px;
-  color: #96594E;
   border: 1px transparent;
   background: white;
   border-radius: 10px;
 }
 .snippet-dashboard-title {
   font-size: 30px;
-  color: #9AADCA;
+  color: $light-blue;
   border: 1px transparent;
-  background: #96594E	;
+  background: $mauve;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -77,21 +88,20 @@ ul
 }
 .snippet-dashboard-links {
   font-size: 20px;
-  color: #3F4134;
   border: 1px transparent;
   background: white;
   border-radius: 10px;
 }
 .snippet-dashboard-info {
   font-size: 15px;
-  color:#737885;
+  color:$elephant;
   font-style: italic;
 }
 .course-dashboard-title {
   font-size: 30px;
-  color: #9AADCA;
+  color: $light-blue;
   border: 1px transparent;
-  background: #C98F76;
+  background: $beige;
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
@@ -99,7 +109,6 @@ ul
 }
 .course-dashboard-links {
   font-size: 20px;
-  color: #6E8EBA;
   border: 1px transparent;
   background: white;
   border-radius: 10px;
@@ -121,31 +130,31 @@ ul
 .project-column {
   font-size: 25px;
   font-weight: bold;
-  color: #5F231F;
-  text-shadow: 1px 1px 1px #E2C3A6;
+  color: $burgundy;
+  text-shadow: 1px 1px 1px $cream;
 }
 .project-data {
-  color: #3F4134;
+  color: $steel;
   font-weight: bold;
 }
 .btn-olive {
   color: #ffffff;
-  background-color: #4C4F36;
+  background-color: $olive-medium;
   border-color: #eea236;
 }
 .btn-olive-lt {
   color: #ffffff;
-  background-color: #697054;
+  background-color: $olive-light;
   border-color: #eea236;
 }
-.btn-maroon-white {
-  color: #5F231F;
-  background-color: white;
-  text-shadow: 1px 1px 1px #9AADCA;
-}
 .btn-reverse-olive {
-  color: #3B4421;
+  color: $olive;
   background-color: white;
+}
+.btn-maroon-white {
+  color: $burgundy;
+  background-color: white;
+  text-shadow: 1px 1px 1px $light-blue;
 }
 .gravatar {
   height: 0px;
@@ -160,10 +169,10 @@ ul
   text-align: center;
 }
 .project-table, td, th {
-  border: 1px solid #AA776E;
+  border: 1px solid $sand;
   font-weight: bold;
 }
 th {
-  background-color: #AA776E;
+  background-color: $sand;
   color: white;
 }
