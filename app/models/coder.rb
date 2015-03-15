@@ -1,5 +1,4 @@
 class Coder < ActiveRecord::Base
-
   has_secure_password
 
   validates :coder_name, presence: true, uniqueness: true

@@ -31,7 +31,6 @@ feature 'signing in and logging out of coder' do
     expect(page).to have_content("Welcome back #{coder.coder_name}")
     expect(page).to_not have_content("Oops, something went wrong. Try again.")
 
-
     click_link 'Logout'
 
     expect(current_path).to match('/login')

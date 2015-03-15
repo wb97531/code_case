@@ -5,7 +5,7 @@ class CodersController < ApplicationController
   # GET /coders
   # GET /coders.json
   def index
-		current_coder ? @coders = Coder.where(id: current_coder.id) : @coders = Coder.where(id: 1000)
+    current_coder ? @coders = Coder.where(id: current_coder.id) : @coders = Coder.where(id: 1000)
   end
 
   # GET /coders/1
@@ -29,8 +29,7 @@ class CodersController < ApplicationController
     respond_to do |format|
       if @coder.save
         session[:coder_id] = @coder.id
-        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up.
-                                                   You are signed in as: #{@coder.coder_name}." }
+        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up. You are signed in as: #{@coder.coder_name}." }
         format.json { render :show, status: :created, location: @coder }
       else
         format.html { render :new }
@@ -64,21 +63,22 @@ class CodersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_coder
-      @coder = Coder.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def coder_params
-		  params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_coder
+    @coder = Coder.find(params[:id])
+  end
 
-    def check_current_coder
-      if current_coder == nil
-        redirect_to '/'
-      elsif current_coder.id != @coder.id
-        redirect_to '/'
-      end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def coder_params
+    params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
+  end
+
+  def check_current_coder
+    if current_coder.nil?
+      redirect_to '/'
+    elsif current_coder.id != @coder.id
+      redirect_to '/'
     end
+  end
 end

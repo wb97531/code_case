@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 feature 'displaying gravatar image' do
-
   scenario 'coder sees gravatar image on the dashboard' do
-    coder = FactoryGirl.create(:coder, id: 1000, email: 'wb9753@gmail.com')
+    FactoryGirl.create(:coder, id: 1000, email: 'wb9753@gmail.com')
 
     visit dashboard_path(1000)
 
@@ -12,11 +11,11 @@ feature 'displaying gravatar image' do
   end
 
   scenario 'guest sees gravatar image on the dashboard' do
-    coder = FactoryGirl.create(:coder, id: 1000, email: 'wb9753@gmail.com')
+    coder = FactoryGirl.create(:coder, id: 1000)
 
     visit guest_path
 
-    fill_in 'email', with: 'wb9753@gmail.com'
+    fill_in 'email', with: coder.email
 
     click_button 'See what they\'re working on'
 

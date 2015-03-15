@@ -13,33 +13,33 @@ Coder.create id: 500,
              email: 'wb9753@gmail.com'
 
 Course.create title: 'Web Development with Ruby on Rails',
-              completion_date: DateTime.new(2014,5,6),
+              completion_date: DateTime.new(2014, 5, 6),
               certificate: true,
               completed: true,
               coder_id: 500,
               place: 'DaVinci Institute',
               instructor: 'Daniel Stutzman',
-              start_date: DateTime.new(2014,2,3),
+              start_date: DateTime.new(2014, 2, 3),
               description: 'Beginner course covering: HTML, CSS, Ruby, Rails, REST & polymorphic routes, custom validation, model methods,  table association, gems, forms & partials'
 
 Course.create title: 'Building the Toolbelt of a Junior Developer',
-              completion_date: DateTime.new(2014,9,9),
+              completion_date: DateTime.new(2014, 9, 9),
               certificate: true,
               completed: true,
               coder_id: 500,
               place: 'DaVinci Institute',
               instructor: 'Jason Noble',
-              start_date: DateTime.new(2014,6,5),
+              start_date: DateTime.new(2014, 6, 5),
               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
 
 Course.create title: 'Java Essential Training',
-              completion_date: DateTime.new(2015,1,22),
+              completion_date: DateTime.new(2015, 1, 22),
               certificate: true,
               completed: true,
               coder_id: 500,
               place: 'lynda.com',
               instructor: 'David Gassner',
-              start_date: DateTime.new(2011,1,5),
+              start_date: DateTime.new(2011, 1, 5),
               description: 'lynda.com\'s description:  This course demonstrates how to install both Java and the Eclipse IDE and dives into the particulars of programming. The course also explains the fundamentals of Java, from creating simple variables, assigning values, and declaring methods to working with strings, arrays, and subclasses; reading and writing to text files; and implementing object oriented programming concepts.
 Topics include:
 Understanding the history and principles of Java
@@ -58,7 +58,7 @@ Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-
 
 Project.create project_name: 'Code Case',
                github_link: 'https://github.com/wb97531/code_case',
-               deadline: DateTime.new(2015,6,30),
+               deadline: DateTime.new(2015, 6, 30),
                description: 'An app to show what a coder has done and has been working on',
                priority: 1,
                coder_id: 500,
@@ -85,7 +85,7 @@ Snippet.create objective: 'sample of a snippet',
 
 Project.create project_name: 'Sample Project',
                github_link: 'https://github.com/sample_coder/code_case',
-               deadline: DateTime.new(2016,6,30),
+               deadline: DateTime.new(2016, 6, 30),
                description: 'An app to show what a coder has done and has been working on',
                priority: 1,
                coder_id: 1000,
@@ -93,13 +93,13 @@ Project.create project_name: 'Sample Project',
                browser_project_link: 'https://sample_app.herokuapp.com/'
 
 Course.create title: 'Sample Course',
-              completion_date: DateTime.new(2016,1,22),
+              completion_date: DateTime.new(2016, 1, 22),
               certificate: true,
               completed: true,
               coder_id: 1000,
               place: 'sample.com',
               instructor: 'Sample Instructor',
-              start_date: DateTime.new(2011,1,5),
+              start_date: DateTime.new(2011, 1, 5),
               description: 'sample description of course'
 
 Coder.create id: 1000,

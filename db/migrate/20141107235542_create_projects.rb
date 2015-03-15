@@ -11,6 +11,5 @@ class CreateProjects < ActiveRecord::Migration
 
       t.timestamps
     end
-
   end
 end

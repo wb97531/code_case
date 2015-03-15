@@ -5,8 +5,8 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-		current_coder ? @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse :
-			@courses = Course.where(coder_id: 1000)
+    current_coder ? @courses = Course.order(:completion_date).where(coder_id: current_coder.id).reverse :
+      @courses = Course.where(coder_id: 1000)
   end
 
   # GET /courses/1
@@ -64,22 +64,23 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def course_params
-      params.require(:course).permit(:title, :completion_date, :certificate, :completed, :coder_id, :place,
-                                     :instructor, :start_date, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.find(params[:id])
+  end
 
-    def check_current_coder
-      if current_coder == nil
-        redirect_to '/'
-      elsif current_coder.id != @course.coder_id
-        redirect_to '/'
-      end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def course_params
+    params.require(:course).permit(:title, :completion_date, :certificate, :completed, :coder_id, :place,
+                                   :instructor, :start_date, :description)
+  end
+
+  def check_current_coder
+    if current_coder.nil?
+      redirect_to '/'
+    elsif current_coder.id != @course.coder_id
+      redirect_to '/'
     end
+  end
 end

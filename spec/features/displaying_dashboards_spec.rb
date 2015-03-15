@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'displaying dashboard' do
   scenario 'displays link to project show page' do
-    @coder_1 = FactoryGirl.create(:coder)
+    @coder_1 = FactoryGirl.create(:coder, coder_name: 'Kate')
     @coder_2 = FactoryGirl.create(:coder)
     @project_1 = FactoryGirl.create(:project, coder_id: @coder_1.id, project_name: 'This is the first project')
     @project_2 = FactoryGirl.create(:project, coder_id: @coder_1.id, project_name: 'This is the second project')
@@ -33,7 +33,6 @@ feature 'displaying dashboard' do
     @code_snippet_1 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, project_id: @project_1.id, objective: 'This is the first snippet')
     @code_snippet_2 = FactoryGirl.create(:snippet, coder_id: @coder_1.id, project_id: @project_1.id, objective: 'This is the second snippet')
     @code_snippet_3 = FactoryGirl.create(:snippet, coder_id: @coder_2.id, project_id: @project_1.id, objective: 'This is the third snippet')
-
 
     visit '/'
 
