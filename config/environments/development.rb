@@ -22,9 +22,9 @@ Rails.application.configure do
     domain: 'wendybrannon.org',
     authentication: :plain,
     user_name: ENV["SMTP_USERNAME"] ||
-      raise("Please set SMTP_USERNAME"),
+      fail("Please set SMTP_USERNAME"),
     password: ENV["SMTP_PASSWORD"] ||
-      raise("Please set SMTP_PASSWORD")
+      fail("Please set SMTP_PASSWORD")
   }
 
   # Print deprecation notices to the Rails logger.
