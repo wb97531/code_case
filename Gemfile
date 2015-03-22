@@ -25,6 +25,8 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'sendgrid'
+
 # Lavish styling
 gem 'bootstrap-generators'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

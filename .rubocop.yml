@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'db/schema.rb'
     - 'app/models/coder.rb'
+    - 'app/controllers/*'
     - 'spec/routing/*'
     - 'spec/requests/*'
     - 'bin/rails'

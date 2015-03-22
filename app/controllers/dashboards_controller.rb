@@ -6,4 +6,8 @@ class DashboardsController < ApplicationController
     current_coder ? @courses = current_coder.courses.order(:completion_date).reverse :
       @courses = @coder.courses.order(:completion_date).reverse
   end
+
+  def send_coder_email
+    CoderNotifier.send_coder_an_email.deliver
+  end
 end

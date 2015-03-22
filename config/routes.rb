@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/guest', to: 'sessions#guest', as: 'guest'
   post '/view_coder', to: 'sessions#view_coder', as: 'view_coder'
+  get 'send_coder_email', to: 'dashboards#send_coder_email'
 end
