@@ -11,8 +11,21 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    port: 587,
+    domain: 'wendybrannon.org',
+    authentication: :plain,
+    user_name: ENV["SMTP_USERNAME"] ||
+      fail("Please set SMTP_USERNAME"),
+    password: ENV["SMTP_PASSWORD"] ||
+      fail("Please set SMTP_PASSWORD")
+  }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
