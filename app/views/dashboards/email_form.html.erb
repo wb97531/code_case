@@ -1,0 +1,26 @@
+<%= form_tag send_coder_email_path do %>
+  <div class="pad">
+    <div class='jumbotron'>
+      <p>
+        <%= label_tag :guest_email, 'Your email' %></br>
+        <%= text_field_tag :guest_email, '  ', class: 'round-this-field' %>
+      </p>
+
+      <p>
+        <%= label_tag :subject %></br>
+        <%= text_field_tag :subject, "  I'd like to connect with you", class: 'round-this-field' %>
+      </p>
+
+      <p>
+        <%= label_tag :message %></br>
+        <textarea id="message" name="message" placeholder="Please include your name and company in the message"
+                  style="margin: 0px; width: 532px; height: 161px; border-radius: 5px;
+                      border: none"></textarea>
+      </p>
+
+      <p>
+        <%= submit_tag 'Send Email', {class: 'btn-lg btn-primary'} %>
+      </p>
+    </div>
+  </div>
+<% end %>

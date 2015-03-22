@@ -3,13 +3,16 @@
 </div>
 <div class='container-dashboard'>
   <% if current_coder %>
-    <%= link_to 'Projects', projects_path, { class: 'btn btn-maroon-white' } %>
-    <%= link_to 'Snippets', snippets_path, { class: 'btn btn-maroon-white' } %>
-    <%= link_to 'Courses', courses_path, { class: 'btn btn-maroon-white' } %>
+    <%= link_to 'Projects', projects_path, {class: 'btn btn-maroon-white'} %>
+    <%= link_to 'Snippets', snippets_path, {class: 'btn btn-maroon-white'} %>
+    <%= link_to 'Courses', courses_path, {class: 'btn btn-maroon-white'} %>
   <% else %>
     <div class="dashboard-name">
       <%= "#{@coder.coder_name}'s Display..." %>
     </div>
+    <div class="pull-right">
+      <%= link_to "Email #{@coder.coder_name}", email_coder_path, class: 'btn-lg btn-maroon-white' %>
+    </div><br/>
   <% end %>
 </div></br>
 <div class='container-dashboard'>
@@ -24,12 +27,13 @@
   <p class='snippet-dashboard-title'>Code Snippets</p>
   <ul class='snippet-dashboard-links'>
     <% @snippets.each do |snippet| %>
-      <div class = 'row'>
-        <div class = 'col-md-8'>
+      <div class='row'>
+        <div class='col-md-8'>
           <li id="<%= dom_id(snippet) %>"><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
         </div>
-        <div class = 'col-md-3'>
-          <p class = 'snippet-dashboard-info pull-right'> from project:  <strong><%= snippet.project.project_name %></strong></p>
+        <div class='col-md-3'>
+          <p class='snippet-dashboard-info pull-right'> from project:
+            <strong><%= snippet.project.project_name %></strong></p>
         </div>
       </div>
     <% end %>
@@ -43,4 +47,3 @@
     <% end %>
   </ul>
 </div>
-<%= link_to 'send_coder_email', send_coder_email_path %>
