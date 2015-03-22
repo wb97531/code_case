@@ -19,11 +19,11 @@ feature 'signing in and logging out of coder' do
   end
 
   scenario 'coder can sign in and logout with valid info' do
-    coder = Coder.create(coder_name: 'marie', password: '1234567', password_confirmation: '1234567', email: 'marie@example.com')
+    coder = FactoryGirl.create(:coder)
     visit '/'
 
-    fill_in 'Email', with: 'marie@example.com'
-    fill_in 'Password', with: '1234567'
+    fill_in 'Email', with: coder.email
+    fill_in 'Password', with: coder.password
 
     click_button 'Login'
 
@@ -39,10 +39,10 @@ feature 'signing in and logging out of coder' do
   end
 
   scenario 'coder can not sign in with invalid login info' do
-    coder = Coder.create(coder_name: 'marie', password: '1234567', password_confirmation: '1234567', email: 'marie@example.com')
+    coder = FactoryGirl.create(:coder)
     visit '/'
 
-    fill_in 'Email', with: 'marie@example.com'
+    fill_in 'Email', with: coder.email
     fill_in 'Password', with: '1234'
 
     click_button 'Login'
@@ -52,7 +52,7 @@ feature 'signing in and logging out of coder' do
     expect(page).to have_content("Oops, something went wrong. Try again.")
 
     fill_in 'Email', with: ''
-    fill_in 'Password', with: '1234567'
+    fill_in 'Password', with: coder.email
 
     click_button 'Login'
 
@@ -62,11 +62,11 @@ feature 'signing in and logging out of coder' do
   end
 
   scenario 'can edit a coder' do
-    coder = Coder.create(coder_name: 'marie', password: '1234567', password_confirmation: '1234567', email: 'marie@example.com')
+    coder = FactoryGirl.create(:coder)
     visit '/'
 
-    fill_in 'Email', with: 'marie@example.com'
-    fill_in 'Password', with: '1234567'
+    fill_in 'Email', with: coder.email
+    fill_in 'Password', with: coder.password
 
     click_button 'Login'
 
@@ -83,11 +83,11 @@ feature 'signing in and logging out of coder' do
   end
 
   scenario 'can not edit coder if password doesn\'t match' do
-    coder = Coder.create(coder_name: 'marie', password: '1234567', password_confirmation: '1234567', email: 'marie@example.com')
+    coder = FactoryGirl.create(:coder)
     visit '/'
 
-    fill_in 'Email', with: 'marie@example.com'
-    fill_in 'Password', with: '1234567'
+    fill_in 'Email', with: coder.email
+    fill_in 'Password', with: coder.password
 
     click_button 'Login'
 
