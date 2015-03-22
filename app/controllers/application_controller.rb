@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   private
 
   def current_coder
-    @coder ||= Coder.find(session[:coder_id]) if session[:coder_id]
+    @coder = Coder.find(session[:coder_id]) if session[:coder_id]
   end
 end
