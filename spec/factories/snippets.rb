@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :snippet do
-    objective "MyString"
-    image_name "MyString"
-    github_file_link "MyString"
-    project_id 1
+    objective "World peace"
+    image_name "awesome_pic"
+    github_file_link "https://github.com"
+    project_id 1000
+    coder_id 1000
   end
 end

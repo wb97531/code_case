@@ -1,10 +1,12 @@
 AllCops:
   Exclude:
     - 'db/schema.rb'
+    - 'db/seeds.rb'
     - 'app/models/coder.rb'
     - 'app/controllers/*'
     - 'spec/routing/*'
     - 'spec/requests/*'
+    - 'spec/spec_helper.rb'
     - 'bin/rails'
     - 'bin/rake'
 

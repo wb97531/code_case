@@ -17,5 +17,4 @@ RSpec.describe CoderNotifier, type: :mailer do
       expect(mail.body.encoded).to match(message)
     end
   end
-
 end

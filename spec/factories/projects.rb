@@ -5,7 +5,7 @@ FactoryGirl.define do
     deadline "2014-11-07"
     description "Website to show off what I'm working on"
     priority 1
-    coder_id 1
+    coder_id 1000
     current true
   end
 end
