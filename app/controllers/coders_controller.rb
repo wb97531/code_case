@@ -57,6 +57,7 @@ class CodersController < ApplicationController
   def destroy
     @coder.destroy
     session[:coder_id] = nil
+    session[:coders_email] = nil
     respond_to do |format|
       format.html { redirect_to root_path, notice: "#{@coder.coder_name}'s account was successfully destroyed." }
       format.json { head :no_content }
