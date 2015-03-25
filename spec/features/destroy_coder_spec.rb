@@ -14,8 +14,6 @@ feature 'Destroying a coder' do
 
     click_link coder.coder_name
 
-    click_link 'Remove Account'
-
     click_link 'Delete Account'
 
     expect(page).to have_content("#{coder.coder_name}'s account was successfully destroyed.")

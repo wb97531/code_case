@@ -28,7 +28,7 @@ feature 'displaying dashboard' do
 
   scenario 'displays coder links to all code snippet show pages' do
     coder_1 = FactoryGirl.create(:coder)
-    coder_2 = FactoryGirl.create(:coder)
+    coder_2 = FactoryGirl.create(:coder, coder_name: 'Andy')
     project_1 = FactoryGirl.create(:project, coder_id: coder_1.id)
     code_snippet_1 = FactoryGirl.create(:snippet, coder_id: coder_1.id, project_id: project_1.id, objective: 'This is the first snippet')
     code_snippet_2 = FactoryGirl.create(:snippet, coder_id: coder_1.id, project_id: project_1.id, objective: 'This is the second snippet')
