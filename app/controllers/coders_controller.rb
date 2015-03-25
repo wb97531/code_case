@@ -56,8 +56,9 @@ class CodersController < ApplicationController
   # DELETE /coders/1.json
   def destroy
     @coder.destroy
+    session[:coder_id] = nil
     respond_to do |format|
-      format.html { redirect_to coders_url, notice: 'Coder was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: "#{@coder.coder_name}'s account was successfully destroyed." }
       format.json { head :no_content }
     end
   end

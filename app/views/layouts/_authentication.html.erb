@@ -1,5 +1,5 @@
 <% if current_coder %>
-  <li class="pad-link"><%= link_to "#{current_coder.coder_name}", coder_path(500) %></li>
+  <li class="pad-link"><%= link_to "#{current_coder.coder_name}", coder_path(current_coder.id) %></li>
   <li class="pad-link"><%= link_to 'Display', dashboard_path(current_coder.id) %></li>
   <li class="pad-link"><%= link_to 'Logout', logout_path, method: :delete %></li>
 <% else %>
