@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'guest viewing coder display' do
   scenario 'guest can view a coder display by email' do
-    coder = FactoryGirl.create(:coder, email: 'wendy@gmail.com', id: 1000)
+    coder = FactoryGirl.create(:coder)
     project = FactoryGirl.create(:project, coder_id: coder.id)
 
     visit '/'
@@ -32,7 +32,7 @@ feature 'guest viewing coder display' do
   end
 
   scenario 'guest can go back to display with navbar link' do
-    coder = FactoryGirl.create(:coder, email: 'example@gmail.com', coder_name: 'Tracy')
+    coder = FactoryGirl.create(:coder)
     project = FactoryGirl.create(:project, coder_id: coder.id)
 
     visit '/'
