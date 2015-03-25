@@ -76,7 +76,7 @@
 #                browser_project_link: 'https://code-case.herokuapp.com/'
 #
 # Snippet.create objective: 'Give the dashboard associated collections for the dashboard view',
-#                image_name: 'https://gist.github.com/wb97531/30c3f42a9c0dbf3349e8.js',
+#                image_name: 'https://gist.github.com/wb9753/788ddf901a9ac0427c93.js',
 #                github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/controllers/dashboards_controller.rb',
 #                project_id: 1,
 #                coder_id: 500
@@ -93,6 +93,12 @@
 #                project_id: 1000,
 #                coder_id: 1000
 #
+Snippet.create objective: 'When a coder is deleted, their projects, snippets and courses will also be deleted.',
+               image_name: 'https://gist.github.com/wb9753/e880229677dbdf3b3d8f.js',
+               github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/models/coder.rb',
+               project_id: 1,
+               coder_id: 500
+
 # Project.create project_name: 'Sample Project',
 #                github_link: 'https://github.com/sample_coder/code_case',
 #                deadline: DateTime.new(2016, 6, 30),
