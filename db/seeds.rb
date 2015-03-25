@@ -32,15 +32,15 @@
 #               start_date: DateTime.new(2014, 6, 5),
 #               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
 
-Course.create title: "Teacher's Assistant of Building the Toolbelt of a Junior Developer",
-              completion_date: DateTime.new(2015, 5, 3),
-              certificate: false,
-              completed: true,
-              coder_id: 500,
-              place: 'DaVinci Institute',
-              instructor: 'Jason Noble',
-              start_date: DateTime.new(2015, 2, 2),
-              description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
+# Course.create title: "Teacher's Assistant of Building the Toolbelt of a Junior Developer",
+#               completion_date: DateTime.new(2015, 5, 3),
+#               certificate: false,
+#               completed: true,
+#               coder_id: 500,
+#               place: 'DaVinci Institute',
+#               instructor: 'Jason Noble',
+#               start_date: DateTime.new(2015, 2, 2),
+#               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
 
 # Course.create title: 'Java Essential Training',
 #               completion_date: DateTime.new(2015, 1, 22),
