@@ -2,15 +2,15 @@ require 'rails_helper'
 
 feature 'Making edits' do
   scenario "coder can add, edit or delete their own work" do
-    coder_1 = FactoryGirl.create(:coder)
-    project = FactoryGirl.create(:project, coder_id: coder_1.id)
-    course = FactoryGirl.create(:course, coder_id: coder_1.id)
-    snippet = FactoryGirl.create(:snippet, coder_id: coder_1.id, project_id: project.id)
+    coder = FactoryGirl.create(:coder)
+    project = FactoryGirl.create(:project, coder_id: coder.id)
+    course = FactoryGirl.create(:course, coder_id: coder.id)
+    snippet = FactoryGirl.create(:snippet, coder_id: coder.id, project_id: project.id)
 
     visit '/'
 
-    fill_in 'Email', with: coder_1.email
-    fill_in 'Password', with: coder_1.password
+    fill_in 'Email', with: coder.email
+    fill_in 'Password', with: coder.password
 
     click_button 'Login'
 
@@ -32,7 +32,7 @@ feature 'Making edits' do
 
   scenario "coder is redirected to login when trying to add, edit or delete another coder's work" do
     coder_1 = FactoryGirl.create(:coder)
-    coder_2 = FactoryGirl.create(:coder)
+    coder_2 = FactoryGirl.create(:coder, coder_name: 'Lisa')
     project = FactoryGirl.create(:project, coder_id: coder_2.id)
     course = FactoryGirl.create(:course, coder_id: coder_2.id)
     snippet = FactoryGirl.create(:snippet, coder_id: coder_2.id)
