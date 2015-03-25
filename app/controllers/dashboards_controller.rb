@@ -12,11 +12,23 @@ class DashboardsController < ApplicationController
   end
 
   def send_coder_email
-    @email = params[:guest_email]
-    @subject = params[:subject]
-    @message = params[:message]
     @coder = Coder.find_by(email: session[:coders_email])
-    CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
-    redirect_to dashboard_path(@coder.id), notice: 'Email has been sent.'
+    if under_email_limit?
+      @email = params[:guest_email]
+      @subject = params[:subject]
+      @message = params[:message]
+      CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
+      redirect_to dashboard_path(@coder.id), notice: 'Email has been sent.'
+    else
+      redirect_to dashboard_path(@coder.id), notice: 'Email limit is 5.'
+    end
+  end
+
+  private
+
+  def under_email_limit?
+    session[:email_count] ||= 0
+    session[:email_count] += 1
+    session[:email_count] <= 5
   end
 end
