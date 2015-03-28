@@ -7,7 +7,7 @@ class TextMessagesController < ApplicationController
   def update_coders_phone
     respond_to do |format|
       if @coder.update(phone: params[:phone])
-        format.html { redirect_to @coder, notice: "#{@coder.coder_name} phone was successfully added." }
+        format.html { redirect_to @coder, notice: "#{@coder.coder_name}'s phone number was successfully updated." }
       else
         format.html { render :add_phone }
       end
