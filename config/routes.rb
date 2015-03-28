@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   post '/view_coder', to: 'sessions#view_coder', as: 'view_coder'
   get 'email_coder', to: 'dashboards#email_form'
   post 'send_coder_email', to: 'dashboards#send_coder_email'
+  get 'add_phone', to: 'text_messages#add_phone'
+  post 'update_coders_phone/:id', to: 'text_messages#update_coders_phone', as: 'update_coders_phone'
 end

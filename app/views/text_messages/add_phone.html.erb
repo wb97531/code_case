@@ -1,0 +1,22 @@
+<%= form_tag(update_coders_phone_path(@coder.id)) do |f| %>
+  <% if @coder.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <h4><%= pluralize(@coder.errors.count, "error") %> prohibited this coder from being saved:</h4>
+      <ul>
+        <% @coder.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="login-container">
+    <div class="jumbotron">
+      <%= label_tag :phone, 'Phone number receiving text' %>
+      <br/>
+      <%= text_field_tag :phone, nil, class: 'round-this-field' %>
+      <br/>
+      <%= submit_tag 'Add or Update Phone', :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
