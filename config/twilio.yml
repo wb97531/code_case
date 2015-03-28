@@ -1,0 +1,4 @@
+production:
+  from: <%= ENV["TWILIO_FROM"] %>
+  sid: <%= ENV["TWILIO_ACCOUNT_SID"] %>
+  token: <%= ENV["TWILIO_ACCOUNT_TOKEN"] %>
