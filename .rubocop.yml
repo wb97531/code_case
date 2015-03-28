@@ -9,6 +9,7 @@ AllCops:
     - 'spec/spec_helper.rb'
     - 'bin/rails'
     - 'bin/rake'
+    - 'config/initializers/twilio.rb'
 
 Metrics/LineLength:
   Max: 200

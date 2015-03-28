@@ -73,7 +73,7 @@ class CodersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def coder_params
-    params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email)
+    params.require(:coder).permit(:coder_name, :password, :password_confirmation, :email, :phone)
   end
 
   def check_current_coder
