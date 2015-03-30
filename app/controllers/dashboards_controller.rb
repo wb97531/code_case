@@ -44,11 +44,11 @@ class DashboardsController < ApplicationController
   end
 
   def send_text_to_coder(coder_phone_number)
-    client = Twilio::REST::Client.new(TWILIO_CONFIG['sid'], TWILIO_CONFIG['token'])
+    client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_ACCOUNT_TOKEN"])
 
     # Create and send an SMS message
     client.account.sms.messages.create(
-      from: TWILIO_CONFIG['from'],
+      from: ENV["TWILIO_FROM"],
       to: coder_phone_number,
       body: "Check your email. There has been interest from Code Case"
     )
