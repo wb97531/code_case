@@ -19,11 +19,11 @@ class DashboardsController < ApplicationController
       @subject = params[:subject]
       @message = params[:message]
       CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
-      # if @coder.phone && under_text_limit?
+      if @coder.phone && under_text_limit?
         send_text_to_coder(@coder.phone)
-      # else
+      else
         redirect_to root_path, notice: 'Email has been sent'
-      # end
+      end
     else
       redirect_to dashboard_path(@coder.id), notice: 'Email limit is 5.'
     end
@@ -40,7 +40,7 @@ class DashboardsController < ApplicationController
   def under_text_limit?
     session[:text_count] ||= 0
     session[:text_count] += 1
-    session[:text_count] <= 2
+    session[:text_count] <= 10
   end
 
   def send_text_to_coder(coder_phone_number)
