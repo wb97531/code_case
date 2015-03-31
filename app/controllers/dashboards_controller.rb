@@ -21,8 +21,10 @@ class DashboardsController < ApplicationController
       @subject = params[:subject]
       @message = params[:message]
       CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
-      if @coder.phone_verified && under_text_limit?
+      # uncomment after phone_verified works
+      if @coder.phone_verified # && under_text_limit?
         send_text_to_coder(@coder.phone)
+        redirect_to dashboard_path(@coder.id), notice: 'An email and text has been sent to developer'
       else
         redirect_to dashboard_path(@coder.id), notice: 'Email has been sent'
       end
@@ -36,13 +38,13 @@ class DashboardsController < ApplicationController
   def under_email_limit?
     session[:email_count] ||= 0
     session[:email_count] += 1
-    session[:email_count] <= 5
+    session[:email_count] <= 20
   end
 
   def under_text_limit?
     session[:text_count] ||= 0
     session[:text_count] += 1
-    session[:text_count] <= 2
+    session[:text_count] <= 20
   end
 
   def send_text_to_coder(coder_phone_number)
@@ -54,6 +56,5 @@ class DashboardsController < ApplicationController
       to: coder_phone_number,
       body: "Check your email. There has been interest from Code Case"
     )
-    redirect_to dashboard_path(@coder.id), notice: 'An email and text has been sent to developer'
   end
 end
