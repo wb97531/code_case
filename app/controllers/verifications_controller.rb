@@ -1,5 +1,5 @@
 class VerificationsController < ApplicationController
-  skip_before_filter  :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token
   before_filter :get_coder
 
   def create

@@ -5,7 +5,7 @@ class SmsTextMessagesController < ApplicationController
   end
 
   def update_coders_phone
-    if @coder.update(phone: params[:phone])
+    if @coder.update(phone: params[:phone].chars.keep_if { |char| char =~ /[0123456789]/ }.pop(10).join)
 
       # Instantiate a Twilio client
       client = Twilio::REST::Client.new(ENV["TWILIO_ACCOUNT_SID"], ENV["TWILIO_ACCOUNT_TOKEN"])

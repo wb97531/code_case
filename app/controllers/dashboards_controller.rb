@@ -21,8 +21,7 @@ class DashboardsController < ApplicationController
       @subject = params[:subject]
       @message = params[:message]
       CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
-      # uncomment after phone_verified works
-      if @coder.phone_verified # && under_text_limit?
+      if @coder.phone_verified && under_text_limit?
         send_text_to_coder(@coder.phone)
         redirect_to dashboard_path(@coder.id), notice: 'An email and text has been sent to developer'
       else
