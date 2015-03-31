@@ -21,12 +21,11 @@ class DashboardsController < ApplicationController
       @subject = params[:subject]
       @message = params[:message]
       CoderNotifier.send_coder_email(@email, @subject, @message, @coder).deliver
-      # add following if statement back when phone verification is complete
-      # if @coder.phone && under_text_limit?
-      #   send_text_to_coder(@coder.phone)
-      # else
+      if @coder.phone_verified && under_text_limit?
+        send_text_to_coder(@coder.phone)
+      else
         redirect_to dashboard_path(@coder.id), notice: 'Email has been sent'
-      # end
+      end
     else
       redirect_to dashboard_path(@coder.id), notice: 'Email limit is 5.'
     end
