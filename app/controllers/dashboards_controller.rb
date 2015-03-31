@@ -54,7 +54,6 @@ class DashboardsController < ApplicationController
       to: coder_phone_number,
       body: "Check your email. There has been interest from Code Case"
     )
-    ###### redirect to dashboard path
     redirect_to dashboard_path(@coder.id), notice: 'An email and text has been sent to developer'
   end
 end

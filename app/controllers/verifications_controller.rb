@@ -4,7 +4,6 @@ class VerificationsController < ApplicationController
 
   def create
     @coder.update_attribute(:phone_verified, true)
-    # You could send another message acknowledging the verificaton
     head :ok
   end
 
