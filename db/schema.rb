@@ -20,9 +20,7 @@ ActiveRecord::Schema.define(version: 20150329014804) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "phone"
-    t.boolean  "text_verified",           default: false
-    t.string   "phone_verification_code"
-    t.boolean  "phone_verified"
+    t.boolean  "phone_verified",  default: false
   end
 
   create_table "courses", force: true do |t|
