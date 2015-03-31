@@ -14,7 +14,7 @@ class SmsTextMessagesController < ApplicationController
       client.account.sms.messages.create(
         from: ENV["TWILIO_FROM"],
         to: @coder.phone,
-        body: "Hopefully the texts will soon be pouring in! To verify your account, please reply 'OK' to this message.")
+        body: "To verify your number, please reply 'OK' to this message.")
       redirect_to dashboard_path(@coder.id)
     else
       render :add_phone
