@@ -1,9 +1,18 @@
 //lavish colors
+$lavish-00 : #F9F5F1;
+$lavish-01 : #FEFFF2;
+$lavish-02 : #FFD49C;
+$lavish-03 : #906A56;
+$lavish-04 : #905534;
+$lavish-05 : #6b4f44;
+$lavish-06 : #533429;
+$lavish-07 : #3B2912;
 
-$lavish-b1 : #dbd8cd;
-$lavish-b2 : #B0AC9B;
-$lavish-b3 : #aea394;
-$lavish-b4 : #756b61;
+$lavish-b0 : rgba(255, 160, 83, 0.46);
+$lavish-b1 : #EC924E;
+$lavish-b2 : #C07443;
+$lavish-b3 : #905534;
+$lavish-b4 : #633A25;
 
 ul
 {
@@ -59,7 +68,7 @@ ul
   font-size: 30px;
   color: $lavish-01;
   border: 1px transparent;
-  background: $lavish-b3;
+  background: $lavish-b4;
   border-radius: 10px;
   text-align: center;
   text-shadow: 1px 1px 1px $lavish-06;
@@ -74,7 +83,7 @@ ul
   font-size: 30px;
   color: $lavish-01;
   border: 1px transparent;
-  background: $lavish-04;
+  background: $lavish-b3;
   border-radius: 10px;
   text-align: center;
   text-shadow: 1px 1px 1px $lavish-06;
@@ -94,7 +103,7 @@ ul
   font-size: 30px;
   color: $lavish-01;
   border: 1px transparent;
-  background: $lavish-03;
+  background: $lavish-b2;
   border-radius: 10px;
   text-align: center;
   text-shadow: 1px 1px 1px $lavish-06;
