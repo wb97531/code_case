@@ -1,14 +1,9 @@
 //lavish colors
 
-$lavish-00 : #F9F5F1;
-$lavish-01 : #FEFFF2;
-$lavish-02 : #FFD49C;
-$lavish-03 : #906A56;
-$lavish-04 : #905534;
-$lavish-05 : #5A4135;
-$lavish-06 : #5A4135;
-$lavish-07 : #533429;
-$lavish-0a : #EBD796;
+$lavish-b1 : #dbd8cd;
+$lavish-b2 : #B0AC9B;
+$lavish-b3 : #aea394;
+$lavish-b4 : #756b61;
 
 ul
 {
@@ -45,11 +40,12 @@ ul
 .dashboard-name {
   text-align: center;
   text-weight: bold;
-  color: $lavish-03;
-  text-shadow: 2px 2px 2px white;
+  color: $lavish-b4;
+  text-shadow: 1px 1px 1px $lavish-03;
   border: 1px solid;
   border-radius: 5px;
   border: transparent;
+  font-weight: bold;
   font-size: 30px;
   width: 300px;
 }
@@ -63,10 +59,10 @@ ul
   font-size: 30px;
   color: $lavish-01;
   border: 1px transparent;
-  background: $lavish-05;
+  background: $lavish-b3;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-02;
+  text-shadow: 1px 1px 1px $lavish-06;
 }
 .project-dashboard-links {
   font-size: 20px;
@@ -81,7 +77,7 @@ ul
   background: $lavish-04;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-02;
+  text-shadow: 1px 1px 1px $lavish-06;
 }
 .snippet-dashboard-links {
   font-size: 20px;
@@ -101,7 +97,7 @@ ul
   background: $lavish-03;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-02;
+  text-shadow: 1px 1px 1px $lavish-06;
 }
 .course-dashboard-links {
   font-size: 20px;
