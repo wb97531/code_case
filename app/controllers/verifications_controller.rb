@@ -10,7 +10,7 @@ class VerificationsController < ApplicationController
   private
 
   def get_coder
-    unless @coder = Coder.find_by_phone(params['From'].chars.pop(10).join)
+    unless @coder = Coder.find_by_phone(params["From"].chars.pop(10).join)
       head :not_found
     end
   end
