@@ -12,6 +12,10 @@
   <% end %>
   <div class="login-container">
     <div class="jumbotron">
+
+      <h4>( Note: a twilio trial account is being used for SMS messaging,
+      so this will only work for coder 500, for the time being )</h4>
+
       <%= label_tag :phone, 'Phone number receiving text' %>
       <br/>
       <%= text_field_tag :phone, nil, class: 'round-this-field' %>
