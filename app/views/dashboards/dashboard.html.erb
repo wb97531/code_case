@@ -1,49 +1,49 @@
-<div class='gravatar'>
-  <%= profile_image_for(@coder) %>
+<div class='row'>
+  <div class='col-md-1'>
+    <ul class="nav nav-pills nav-stacked">
+      <li><%= profile_image_for(@coder) %></li>
+      <li style='width: 80px;'><%= link_to "Email #{@coder.coder_name.chars[0..6].join}", email_coder_path, class: 'btn-lg btn-primary' %></li>
+    </ul>
+  </div>
+  <div class='col-md-11'>
+    <div class='container-dashboard'>
+      <p class='project-dashboard-title'>Projects</p>
+      <ul class='project-dashboard-links'>
+        <% @projects.each do |project| %>
+          <li id="<%= dom_id(project) %>"><%= link_to project.project_name, project_path(project.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class='container-dashboard'>
+      <p class='snippet-dashboard-title'>Code Snippets</p>
+      <ul class='snippet-dashboard-links'>
+        <% @snippets.each do |snippet| %>
+          <div class='row'>
+            <div class='col-md-8'>
+              <li id="<%= dom_id(snippet) %>"><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
+            </div>
+            <div class='col-md-3'>
+              <p class='snippet-dashboard-info pull-right'> from project:
+                <strong><%= snippet.project.project_name %></strong></p>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class='container-dashboard'>
+      <p class='course-dashboard-title'>Education</p>
+      <ul class='course-dashboard-links'>
+        <% @courses.each do |course| %>
+          <li id="<%= dom_id(course) %>"><%= link_to course.title, course_path(course.id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
-<div class='container-dashboard'>
-  <% if current_coder %>
+<% if current_coder %>
+  <div class='container-dashboard'>
     <%= link_to 'Projects', projects_path, {class: 'btn btn-maroon-white'} %>
     <%= link_to 'Snippets', snippets_path, {class: 'btn btn-maroon-white'} %>
     <%= link_to 'Courses', courses_path, {class: 'btn btn-maroon-white'} %>
-  <% else %>
-    <div class="dashboard-name">
-      <%= "#{@coder.coder_name}'s Display" %>
-    </div>
-    <div class="pull-right">
-      <%= link_to "Email #{@coder.coder_name}", email_coder_path, class: 'btn-lg btn-maroon-white' %>
-    </div><br/>
-  <% end %>
-</div></br>
-<div class='container-dashboard'>
-  <p class='project-dashboard-title'>Projects</p>
-  <ul class='project-dashboard-links'>
-    <% @projects.each do |project| %>
-      <li id="<%= dom_id(project) %>"><%= link_to project.project_name, project_path(project.id) %></li>
-    <% end %>
-  </ul>
-</div>
-<div class='container-dashboard'>
-  <p class='snippet-dashboard-title'>Code Snippets</p>
-  <ul class='snippet-dashboard-links'>
-    <% @snippets.each do |snippet| %>
-      <div class='row'>
-        <div class='col-md-8'>
-          <li id="<%= dom_id(snippet) %>"><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
-        </div>
-        <div class='col-md-3'>
-          <p class='snippet-dashboard-info pull-right'> from project:
-            <strong><%= snippet.project.project_name %></strong></p>
-        </div>
-      </div>
-    <% end %>
-  </ul>
-</div>
-<div class='container-dashboard'>
-  <p class='course-dashboard-title'>Education</p>
-  <ul class='course-dashboard-links'>
-    <% @courses.each do |course| %>
-      <li id="<%= dom_id(course) %>"><%= link_to course.title, course_path(course.id) %></li>
-    <% end %>
-  </ul>
-</div>
+  </div>
+<% end %>

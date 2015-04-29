@@ -1,22 +1,34 @@
 //lavish colors
-$lavish-00 : #F9F5F1;
-$lavish-01 : #FEFFF2;
-$lavish-02 : #FFD49C;
-$lavish-03 : #906A56;
-$lavish-04 : #905534;
-$lavish-05 : #6b4f44;
-$lavish-06 : #533429;
-$lavish-07 : #3B2912;
+$lavish-00 : #FFFFFF;
+$lavish-01 : #E6E3E6;
+$lavish-02 : #C4BDBC;
+$lavish-03 : #A39F9F;
+$lavish-04 : #837E7E;
+$lavish-05 : #5E5B5B;
+$lavish-06 : #423E3E;
+$lavish-07 : #2A2728;
+$lavish-08 : #3B2912;
 
-$lavish-b0 : rgba(255, 160, 83, 0.46);
-$lavish-b1 : #EC924E;
-$lavish-b2 : #C07443;
-$lavish-b3 : #905534;
-$lavish-b4 : #633A25;
+$lavish-b0 : rgba(0, 117, 117, 0.71);
+$lavish-b1 : #C4BDBC;
+$lavish-b3 : #5E5B5B;
+$lavish-b4 : #3B2912;
+$lavish-b2 : rgba(50, 167, 167, 0.60);
+$lavish-b3 : rgba(80, 197, 197, 0.40);
 
+
+$lavish-link : #50C5C5;
+$text : #007575;
+$lavish-red : #9E1E1E;
+$lavish-title : $lavish-00;
+$lavish-title-shadow : #9E1E1E;
 ul
 {
   list-style-type: none;
+}
+.app_name {
+  text-shadow: 1px 2px 2px $lavish-link;
+  color: $lavish-00;
 }
 .round-this-field {
   border: 1px solid;
@@ -46,32 +58,38 @@ ul
   width: 500px;
   height: 50px;
 }
+.dashboard-panel-left {
+  background:orange;
+  width:200px;
+  float:left;
+}
 .dashboard-name {
-  text-align: center;
+  text-align: right;
   text-weight: bold;
-  color: $lavish-b4;
+  color: $lavish-b3;
   text-shadow: 1px 1px 1px $lavish-03;
   border: 1px solid;
   border-radius: 5px;
   border: transparent;
+  font-family: 'Rouge Script', cursive;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 60px;
   width: 300px;
 }
 .container-dashboard {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 10px;
+  padding-right: 50px;
 }
 .project-dashboard-title {
   font-size: 30px;
-  color: $lavish-01;
+  color: $lavish-title;
   border: 1px transparent;
-  background: $lavish-b4;
+  background: $lavish-b0;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-06;
+  text-shadow: 1px 1px 1px $lavish-title-shadow;
 }
 .project-dashboard-links {
   font-size: 20px;
@@ -81,12 +99,12 @@ ul
 }
 .snippet-dashboard-title {
   font-size: 30px;
-  color: $lavish-01;
+  color: $lavish-title;
   border: 1px transparent;
-  background: $lavish-b3;
+  background: $lavish-b2;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-06;
+  text-shadow: 1px 1px 1px $lavish-title-shadow;
 }
 .snippet-dashboard-links {
   font-size: 20px;
@@ -96,17 +114,17 @@ ul
 }
 .snippet-dashboard-info {
   font-size: 15px;
-  color:$lavish-01;
+  color:$lavish-b2;
   font-style: italic;
 }
 .course-dashboard-title {
   font-size: 30px;
-  color: $lavish-01;
+  color: $lavish-title;
   border: 1px transparent;
-  background: $lavish-b2;
+  background: $lavish-b3;
   border-radius: 10px;
   text-align: center;
-  text-shadow: 1px 1px 1px $lavish-06;
+  text-shadow: 1px 1px 1px $lavish-title-shadow;
 }
 .course-dashboard-links {
   font-size: 20px;
@@ -162,7 +180,8 @@ ul
   background-color: $lavish-02;
 }
 .gravatar {
-  height: 0px;
+  height: 10px;
+  width: 100px;
 }
 .pad {
   padding: 20px;
