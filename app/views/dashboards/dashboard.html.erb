@@ -31,8 +31,7 @@
               <li id="<%= dom_id(snippet) %>"><%= link_to snippet.objective.chars[0..58].join + '...', snippet_path(snippet.id) %> </li>
             </div>
             <div class='col-md-3'>
-              <p class='snippet-dashboard-info pull-right'> from project:
-                <strong><%= snippet.project.project_name %></strong></p>
+              <%= link_to "from project: #{snippet.project.project_name}", project_path(snippet.project_id), class: 'snippet-dashboard-info pull-right' %>
             </div>
           </div>
         <% end %>
