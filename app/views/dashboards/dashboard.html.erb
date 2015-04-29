@@ -1,3 +1,11 @@
+<% if current_coder %>
+  <div class='container-dashboard'>
+    <%= link_to 'Projects', projects_path, {class: 'btn btn-maroon-white'} %>
+    <%= link_to 'Snippets', snippets_path, {class: 'btn btn-maroon-white'} %>
+    <%= link_to 'Courses', courses_path, {class: 'btn btn-maroon-white'} %>
+  </div>
+<% end %>
+<br/>
 <div class='row'>
   <div class='col-md-1'>
     <ul class="nav nav-pills nav-stacked">
@@ -40,10 +48,3 @@
     </div>
   </div>
 </div>
-<% if current_coder %>
-  <div class='container-dashboard'>
-    <%= link_to 'Projects', projects_path, {class: 'btn btn-maroon-white'} %>
-    <%= link_to 'Snippets', snippets_path, {class: 'btn btn-maroon-white'} %>
-    <%= link_to 'Courses', courses_path, {class: 'btn btn-maroon-white'} %>
-  </div>
-<% end %>
