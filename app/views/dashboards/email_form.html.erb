@@ -19,7 +19,9 @@
       </p>
 
       <%# if @coder.text_verified %>
+      <% if session[:coders_email] == 'wb9753@gmail.com' %>
         <p>Coder will be sent a text to check their email.</p>
+      <% end %>
       <%# end %>
 
       <p>

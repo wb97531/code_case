@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
     if coder && coder.authenticate(params[:password])
       # coder submitted valid password
       session[:coder_id] = coder.id
-      redirect_to dashboard_path(coder.id), notice: "Welcome back #{coder.coder_name}"
+      redirect_to dashboard_path(coder.id), notice: "Welcome back #{coder.coder_name}!"
     else
-      flash[:error] = "Oops, something went wrong. Try again."
+      flash.now[:danger] = 'Oops, something went wrong. Try again.'
       render :login
     end
   end

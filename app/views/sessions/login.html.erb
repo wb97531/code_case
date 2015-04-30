@@ -11,11 +11,11 @@
     <div class='jumbotron round-this-jumbotron'>
       <p>
         <%= label_tag :email %></br>
-        <%= text_field_tag :email, nil, class: 'round-this-field' %>
+        <%= text_field_tag :email, nil, placeholder: 'codecase@example.com', class: 'round-this-field' %>
       </p>
       <p>
         <%= label_tag :password %></br>
-        <%= password_field_tag :password, nil, class: 'round-this-field' %>
+        <%= password_field_tag :password, nil, placeholder: '........', class: 'round-this-field' %>
       </p>
       <p>
         <%= submit_tag 'Login', { class: 'btn-lg btn-primary' } %>
