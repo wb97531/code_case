@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'dashboard/:id', to: 'dashboards#dashboard', as: 'dashboard'
   get '/login', to: 'sessions#login', as: 'get_login'
   post '/login', to: 'sessions#create', as: 'login'
-  delete '/logout', to: 'sessions#destroy'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
   get '/guest', to: 'sessions#guest', as: 'guest'
   post '/view_coder', to: 'sessions#view_coder', as: 'view_coder'
   get 'email_coder', to: 'dashboards#email_form'

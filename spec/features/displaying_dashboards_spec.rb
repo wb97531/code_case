@@ -76,4 +76,17 @@ feature 'displaying dashboard' do
     expect(page).to have_content(course_1.title)
     expect(page).to_not have_content(course_2.title)
   end
+
+  scenario 'snippets show link to associated projects' do
+    coder_1 = FactoryGirl.create(:coder)
+    project_1 = FactoryGirl.create(:project, coder_id: coder_1.id)
+    code_snippet_1 = FactoryGirl.create(:snippet, coder_id: coder_1.id, project_id: project_1.id, objective: 'This is the first snippet')
+
+    visit "/dashboard/#{coder_1.id}"
+
+    click_link "from project: #{code_snippet_1.project.project_name}"
+
+    expect(page).to have_content(project_1.project_name)
+    expect(page).to have_content('Deadline')
+  end
 end

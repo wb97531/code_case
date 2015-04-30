@@ -61,7 +61,7 @@ feature 'signing in and logging out of coder' do
     expect(page).to have_content("Oops, something went wrong. Try again.")
   end
 
-  scenario 'can edit a coder' do
+  scenario 'if current coders exists, switch coder link replaces root page content' do
     coder = FactoryGirl.create(:coder)
     visit '/'
 
@@ -70,16 +70,34 @@ feature 'signing in and logging out of coder' do
 
     click_button 'Login'
 
-    visit "/coders/#{coder.id}/edit"
+    visit '/'
 
-    fill_in 'Email', with: 'wendy@example.com'
-    fill_in 'Password', with: '123456789'
-    fill_in 'Password confirmation', with: '123456789'
-    fill_in 'Coder name', with: 'marie'
+    expect(page).to_not have_button("Login")
 
-    click_button 'Update Coder'
+    click_link 'Switch Coder'
 
-    expect(page).to have_content('marie')
+    expect(page).to have_button("Login")
+  end
+
+  scenario 'if current coders exists, switch coder link replaces root page content' do
+    coder = FactoryGirl.create(:coder)
+    visit '/'
+
+    click_link 'Guest'
+
+    fill_in "Enter coder's email", with: coder.email
+
+    click_button "See what they're working on"
+
+    visit '/'
+
+    expect(page).to_not have_link('Guest')
+
+    click_link 'Switch Coder'
+
+    expect(page).to have_link('Guest')
+    expect(page).to_not have_link('Done')
+    expect(page).to_not have_link('Display')
   end
 
   scenario 'can not edit coder if password doesn\'t match' do
@@ -101,5 +119,6 @@ feature 'signing in and logging out of coder' do
     click_button 'Update Coder'
 
     expect(page).to_not have_content("wendy was successfully updated.")
+    expect(coder.email).to_not eq('wendy@example.com')
   end
 end
