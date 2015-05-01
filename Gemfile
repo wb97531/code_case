@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
 # TDD and BDD gems
 group :test, :darwin, :development do
   gem 'rspec-rails'
