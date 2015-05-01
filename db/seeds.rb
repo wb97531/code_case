@@ -98,7 +98,18 @@
 #                github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/models/coder.rb',
 #                project_id: 1,
 #                coder_id: 500
-#
+Snippet.create objective: ' create Rspec spec file to test that only a coder can edit their own info',
+               image_name: 'https://gist.github.com/wb9753/904a5053d2915b9791aa.js',
+               github_file_link: 'https://github.com/wb97531/code_case/blob/master/spec/features/only_coder_can_edit_spec.rb',
+               project_id: 1,
+               coder_id: 500
+
+Snippet.create objective: 'Write code to make the tests pass for coder editing spec',
+               image_name: 'https://gist.github.com/wb9753/10e7235e926dcba2df8c.js',
+               github_file_link: 'https://github.com/wb97531/code_case/blob/master/app/controllers/coders_controller.rb',
+               project_id: 1,
+               coder_id: 500
+
 # Project.create project_name: 'Sample Project',
 #                github_link: 'https://github.com/sample_coder/code_case',
 #                deadline: DateTime.new(2016, 6, 30),

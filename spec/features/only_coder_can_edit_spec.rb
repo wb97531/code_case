@@ -60,7 +60,7 @@ feature 'Making edits' do
     expect(page).to_not have_link('Switch Coder')
   end
 
-  scenario "coder is redirected to login or their edit page when trying to visit another coder's edit pages" do
+  scenario "coder is redirected to login or their edit page when trying to edit/visit another coder's edit pages" do
     coder_1 = FactoryGirl.create(:coder)
     coder_2 = FactoryGirl.create(:coder, coder_name: 'Lisa')
     project = FactoryGirl.create(:project, coder_id: coder_2.id)
