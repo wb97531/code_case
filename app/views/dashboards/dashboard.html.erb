@@ -10,7 +10,9 @@
   <div class='col-md-1'>
     <ul class="nav nav-pills nav-stacked">
       <li><%= profile_image_for(@coder) %></li>
-      <li style='width: 80px;'><%= link_to "Email #{@coder.coder_name.chars[0..6].join}", email_coder_path, class: 'btn-lg btn-primary' %></li>
+      <% if @coder.verified_email %>
+        <li style='width: 80px;'><%= link_to "Email #{@coder.coder_name.chars[0..6].join}", email_coder_path, class: 'btn-lg btn-primary' %></li>
+      <% end %>
     </ul>
   </div>
   <div class='col-md-11'>
