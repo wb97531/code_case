@@ -15,7 +15,7 @@ feature 'signing in and logging out of coder' do
 
     click_button 'Create Coder'
     expect(page).to have_text('Thank you for signing up. You are signed in as: bob')
-    # expect(page).to have_text('Signed in as ted@smith.com')
+    expect(ActionMailer::Base.deliveries).to have(1).email
   end
 
   scenario 'coder can sign in and logout with valid info' do
@@ -60,6 +60,20 @@ feature 'signing in and logging out of coder' do
     expect(page).to_not have_content("Welcome back #{coder.coder_name}")
     expect(page).to have_content("Oops, something went wrong. Try again.")
   end
+
+  # scenario 'coder can not sign in without verification' do
+  #   coder = FactoryGirl.create(:coder, verified_email: false)
+  #   visit '/'
+  #
+  #   fill_in 'Email', with: coder.email
+  #   fill_in 'Password', with: coder.verified
+  #
+  #   click_button 'Login'
+  #
+  #   expect(current_path).to match('/login')
+  #   expect(page).to_not have_content("Welcome back #{coder.coder_name}")
+  #   expect(page).to have_content("Oops, something went wrong. Try again.")
+  # end
 
   scenario 'if current coders exists, switch coder link replaces root page content' do
     coder = FactoryGirl.create(:coder)

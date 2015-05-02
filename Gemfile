@@ -4,6 +4,7 @@ ruby '2.1.5'
 # TDD and BDD gems
 group :test, :darwin, :development do
   gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'guard-rubocop'
