@@ -28,13 +28,24 @@ class CodersController < ApplicationController
     @coder = Coder.new(coder_params)
     respond_to do |format|
       if @coder.save
+        @coder.needs_verification!
         session[:coder_id] = @coder.id
-        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up. You are signed in as: #{@coder.coder_name}." }
+        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up. An email has been sent for to you for verification."}
         format.json { render :show, status: :created, location: @coder }
       else
         format.html { render :new }
         format.json { render json: @coder.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def verify
+    @coder = Coder.find_by(token: params[:token])
+    @coder.update_attribute(:verified_email, true)
+    if @coder.verified_email = true
+      redirect_to dashboard_path(@coder.id), notice: "You're email has been verified."
+    else
+      redirect_to root_path, notice: "There was a problem, email wasn't verified"
     end
   end
 
