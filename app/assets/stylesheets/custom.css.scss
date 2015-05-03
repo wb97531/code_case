@@ -22,6 +22,10 @@ $text : #007575;
 $lavish-red : #9E1E1E;
 $lavish-title : $lavish-00;
 $lavish-title-shadow : #9E1E1E;
+
+.red-text {
+  color: $lavish-red;
+}
 ul
 {
   list-style-type: none;
