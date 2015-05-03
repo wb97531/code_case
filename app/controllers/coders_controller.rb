@@ -49,6 +49,17 @@ class CodersController < ApplicationController
     end
   end
 
+  def manual_verify_email
+    @coder = Coder.find_by(token: params[:token])
+    @coder.update_attribute(:verified_email, true)
+    if @coder.verified_email = true
+      redirect_to dashboard_path(@coder.id), notice: "You're email has been verified."
+    else
+      redirect_to root_path, notice: "There was a problem, email wasn't verified"
+    end
+  end
+
+
   # PATCH/PUT /coders/1
   # PATCH/PUT /coders/1.json
   def update

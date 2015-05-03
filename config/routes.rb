@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # default_url_options host: 'loaclhost', port: 3000
-  default_url_options host: 'https://code-case.herokuapp.com/', port: $PORT
+  default_url_options host: 'https://code-case.herokuapp.com', port: $PORT
 
   resources :courses
 
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root 'sessions#login'
   get 'dashboard/:id',            to: 'dashboards#dashboard',                  as: 'dashboard'
   get 'verification/:token',      to: 'coders#verify',                         as: 'verify_email'
+  post 'verification',            to: 'coders#manual_verify_email',            as: 'manual_verify_email'
   get 'login',                    to: 'sessions#login',                        as: 'get_login'
   post 'login',                   to: 'sessions#create',                       as: 'login'
   delete 'logout',                to: 'sessions#destroy',                      as: 'logout'
