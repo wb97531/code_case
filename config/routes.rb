@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # default_url_options host: 'loaclhost', port: 3000
-  default_url_options host: 'heroku', port: $PORT
+  default_url_options host: 'https://code-case.herokuapp.com/', port: $PORT
 
   resources :courses
 
