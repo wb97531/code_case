@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <%= link_to @coder, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-maroon-white' do %>
+  <%= link_to @coder, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-default' do %>
     <span class="glyphicon glyphicon-trash"></span>
     Delete Account
   <% end %>
@@ -11,18 +11,25 @@
 <h3>
   <dl class="dl-left">
     <dt>Coder name:</dt>
-    <dd style="color: white;"><%= @coder.coder_name %></dd>
+    <dd class="red-text"><%= @coder.coder_name %></dd>
   </dl>
   <dl class="dl-left">
     <dt>Email:</dt>
-    <dd style="color: white;"><%= @coder.email %></dd>
+    <dd class="red-text"><%= @coder.email %></dd>
   </dl>
   <dl class="dl-left">
     <dt>Dashboard Image</dt>
-    <dd><%= link_to 'go to Gravtar to create', "http://en.gravatar.com/", class: 'btn btn-maroon-white', :target => "_blank" %></dd>
+    <dd><%= link_to 'go to Gravtar to create', "http://en.gravatar.com/", class: 'btn btn-primary', :target => "_blank" %></dd>
   </dl>
-  <dl class="dl-left pull-left">
-    <dt>Add or update phone number to receive a text when emailed</dt>
-    <%= link_to 'Enter Number', add_phone_path, class: 'btn btn-maroon-white' %>
+  <!--<dl class="dl-left">-->
+    <!--<dt>Add or update phone number to receive a text when emailed</dt>-->
+    <!--<%#= link_to 'Enter Number', add_phone_path, class: 'btn btn-primary' %>-->
+  <!--</dl>-->
+  <dl class="dl-left">
+    <%= form_tag(manual_verify_email_path) do %>
+      <dt class='pull-left'><%= label_tag :token, "If the link didn't work in the email, you can submit the token below", {class: "control-label"} %></dt>
+      <dd><%= text_field_tag :token, 'example: 5ZIo-5QKGL2JoCLL0hYTTg', {class: "form-control"} %></dd>
+      <dd><%= submit_tag 'Verify Email', {class: 'btn btn-primary'} %></dd>
+    <% end %>
   </dl>
 </h3>
