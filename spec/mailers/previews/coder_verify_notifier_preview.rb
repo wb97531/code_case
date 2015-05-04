@@ -1,6 +1,5 @@
 # Preview all emails at http://localhost:3000/rails/mailers/coder_verify_notifier
 class CoderVerifyNotifierPreview < ActionMailer::Preview
-
   # Preview this email at http://localhost:3000/rails/mailers/coder_verify_notifier/signed_up
   def signed_up
     CoderVerifyNotifier.signed_up
@@ -15,5 +14,4 @@ class CoderVerifyNotifierPreview < ActionMailer::Preview
   def verify
     CoderVerifyNotifier.verify
   end
-
 end

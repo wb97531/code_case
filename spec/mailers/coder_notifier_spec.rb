@@ -1,5 +1,4 @@
 require "rails_helper"
-
 RSpec.describe CoderNotifier, type: :mailer do
   describe "the guest can send the coder an email" do
     let(:email_subject) { "Send coder email" }

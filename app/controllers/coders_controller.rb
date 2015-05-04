@@ -30,7 +30,7 @@ class CodersController < ApplicationController
       if @coder.save
         @coder.needs_verification!
         session[:coder_id] = @coder.id
-        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you for signing up. An email has been sent for to you for verification."}
+        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you #{} for signing up. An email has been sent for to you for verification."}
         format.json { render :show, status: :created, location: @coder }
       else
         format.html { render :new }

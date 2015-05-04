@@ -1,5 +1,4 @@
 require 'rails_helper'
-
 feature 'signing in and logging out of coder' do
   scenario 'allows a coder to signup and create session' do
     visit '/'
@@ -14,12 +13,13 @@ feature 'signing in and logging out of coder' do
     fill_in 'Email', with: 'ted@smith.com'
 
     click_button 'Create Coder'
-    expect(page).to have_text('Thank you for signing up. You are signed in as: bob')
+    expect(page).to have_text("Thank you Bob for signing up. An email has been sent for to you for verification.")
     expect(ActionMailer::Base.deliveries).to have(1).email
   end
 
   scenario 'coder can sign in and logout with valid info' do
     coder = FactoryGirl.create(:coder)
+
     visit '/'
 
     fill_in 'Email', with: coder.email
@@ -40,6 +40,7 @@ feature 'signing in and logging out of coder' do
 
   scenario 'coder can not sign in with invalid login info' do
     coder = FactoryGirl.create(:coder)
+
     visit '/'
 
     fill_in 'Email', with: coder.email
@@ -77,6 +78,7 @@ feature 'signing in and logging out of coder' do
 
   scenario 'if current coders exists, switch coder link replaces root page content' do
     coder = FactoryGirl.create(:coder)
+
     visit '/'
 
     fill_in 'Email', with: coder.email
@@ -95,6 +97,7 @@ feature 'signing in and logging out of coder' do
 
   scenario 'if current coders exists, switch coder link replaces root page content' do
     coder = FactoryGirl.create(:coder)
+
     visit '/'
 
     click_link 'Guest'
@@ -116,6 +119,7 @@ feature 'signing in and logging out of coder' do
 
   scenario 'can not edit coder if password doesn\'t match' do
     coder = FactoryGirl.create(:coder)
+
     visit '/'
 
     fill_in 'Email', with: coder.email
