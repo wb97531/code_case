@@ -6,68 +6,68 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 ######################################################################################################
-Coder.create id: 500,
-             coder_name: 'Wendy',
-             password:  'codingisfun',
-             password: 'codingisfun',
-             email: 'wb9753@gmail.com',
-             token: "3reJPYWOL1FJFDwVcjHjqg",
-             verified: true
-
-Course.create title: 'Web Development with Ruby on Rails',
-              completion_date: DateTime.new(2014, 5, 6),
-              certificate: true,
-              completed: true,
-              coder_id: 500,
-              place: 'DaVinci Institute',
-              instructor: 'Daniel Stutzman',
-              start_date: DateTime.new(2014, 2, 3),
-              description: 'Beginner course covering: HTML, CSS, Ruby, Rails, REST & polymorphic routes, custom validation, model methods,  table association, gems, forms & partials'
-
-Course.create title: 'Building the Toolbelt of a Junior Developer',
-              completion_date: DateTime.new(2014, 9, 9),
-              certificate: true,
-              completed: true,
-              coder_id: 500,
-              place: 'DaVinci Institute',
-              instructor: 'Jason Noble',
-              start_date: DateTime.new(2014, 6, 5),
-              description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
-
-Course.create title: "Teacher's Assistant of Building the Toolbelt of a Junior Developer",
-              completion_date: DateTime.new(2015, 5, 3),
-              certificate: false,
-              completed: true,
-              coder_id: 500,
-              place: 'DaVinci Institute',
-              instructor: 'Jason Noble',
-              start_date: DateTime.new(2015, 2, 2),
-              description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
-
-Course.create title: 'Java Essential Training',
-              completion_date: DateTime.new(2015, 1, 22),
-              certificate: true,
-              completed: true,
-              coder_id: 500,
-              place: 'lynda.com',
-              instructor: 'David Gassner',
-              start_date: DateTime.new(2011, 1, 5),
-              description: 'lynda.com\'s description:  This course demonstrates how to install both Java and the Eclipse IDE and dives into the particulars of programming. The course also explains the fundamentals of Java, from creating simple variables, assigning values, and declaring methods to working with strings, arrays, and subclasses; reading and writing to text files; and implementing object oriented programming concepts.
-Topics include:
-Understanding the history and principles of Java
-Installing Eclipse and Java
-Compiling and running from the command line
-Managing memory and performing garbage collection
-Declaring and initializing variables
-Writing conditional code
-Building and parsing strings
-Debugging and exception handling
-Using simple arrays
-Creating custom classes
-Working with encapsulation, inheritance, and polymorphism
-Managing files
-Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-Training/86005-2.html'
-
+# Coder.create id: 500,
+#              coder_name: 'Wendy',
+#              password:  'codingisfun',
+#              password: 'codingisfun',
+#              email: 'wb9753@gmail.com',
+#              token: "3reJPYWOL1FJFDwVcjHjqg",
+#              verified_email: true
+#
+# Course.create title: 'Web Development with Ruby on Rails',
+#               completion_date: DateTime.new(2014, 5, 6),
+#               certificate: true,
+#               completed: true,
+#               coder_id: 500,
+#               place: 'DaVinci Institute',
+#               instructor: 'Daniel Stutzman',
+#               start_date: DateTime.new(2014, 2, 3),
+#               description: 'Beginner course covering: HTML, CSS, Ruby, Rails, REST & polymorphic routes, custom validation, model methods,  table association, gems, forms & partials'
+#
+# Course.create title: 'Building the Toolbelt of a Junior Developer',
+#               completion_date: DateTime.new(2014, 9, 9),
+#               certificate: true,
+#               completed: true,
+#               coder_id: 500,
+#               place: 'DaVinci Institute',
+#               instructor: 'Jason Noble',
+#               start_date: DateTime.new(2014, 6, 5),
+#               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
+#
+# Course.create title: "Teacher's Assistant of Building the Toolbelt of a Junior Developer",
+#               completion_date: DateTime.new(2015, 5, 3),
+#               certificate: false,
+#               completed: true,
+#               coder_id: 500,
+#               place: 'DaVinci Institute',
+#               instructor: 'Jason Noble',
+#               start_date: DateTime.new(2015, 2, 2),
+#               description: 'Focus was on backend coding and covered: Ruby, TDD, Rspec, Rails, MVC, BDD, Capybara, Git, PivotalTracker, Agile,  API, JSON, Mailers, Scaffolds, Pair Programming'
+#
+# Course.create title: 'Java Essential Training',
+#               completion_date: DateTime.new(2015, 1, 22),
+#               certificate: true,
+#               completed: true,
+#               coder_id: 500,
+#               place: 'lynda.com',
+#               instructor: 'David Gassner',
+#               start_date: DateTime.new(2011, 1, 5),
+#               description: 'lynda.com\'s description:  This course demonstrates how to install both Java and the Eclipse IDE and dives into the particulars of programming. The course also explains the fundamentals of Java, from creating simple variables, assigning values, and declaring methods to working with strings, arrays, and subclasses; reading and writing to text files; and implementing object oriented programming concepts.
+# Topics include:
+# Understanding the history and principles of Java
+# Installing Eclipse and Java
+# Compiling and running from the command line
+# Managing memory and performing garbage collection
+# Declaring and initializing variables
+# Writing conditional code
+# Building and parsing strings
+# Debugging and exception handling
+# Using simple arrays
+# Creating custom classes
+# Working with encapsulation, inheritance, and polymorphism
+# Managing files
+# Documenting code with Javadocs -- http://www.lynda.com/Java-tutorials/Essential-Training/86005-2.html'
+#
 Project.create project_name: 'Code Case',
                github_link: 'https://github.com/wb97531/code_case',
                deadline: DateTime.new(2015, 6, 30),
