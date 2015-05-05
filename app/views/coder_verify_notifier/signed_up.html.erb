@@ -1,15 +1,18 @@
+<h3>
 Hello <%= @coder.coder_name.titleize %>
-
+<p />
 You recently created a <%= t('site_name') %> account using your email address
 of <%= @coder.email %>
-
+<p />
 To verify your email address, please open the following link:
-
+<p />
 <%= link_to verify_email_url(@coder.token), verify_email_url(@coder.token) %>
-
+<p />
 If the link does not work, please login to your account, click on your name, paste the following token
 and click 'Verify Email'
-
+<p />
 <%= @coder.token %>
-
+<p />
 Thank you for visiting <%= t('site_name') %>
+
+</h3>

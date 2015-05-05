@@ -71,7 +71,7 @@
 # Project.create project_name: 'Code Case',
 #                github_link: 'https://github.com/wb97531/code_case',
 #                deadline: DateTime.new(2015, 6, 30),
-#                description: 'An app to show what a coder has done and has been working on',
+#                description: 'An app to make reviewing a developer's work easier, by having it all in one place. Also, lightens up what a coder needs to remember to put on a resume.',
 #                priority: 1,
 #                coder_id: 500,
 #                current: true,
