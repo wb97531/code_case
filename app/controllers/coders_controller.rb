@@ -63,8 +63,11 @@ class CodersController < ApplicationController
   # PATCH/PUT /coders/1
   # PATCH/PUT /coders/1.json
   def update
+    old_email = @coder.email
     respond_to do |format|
       if @coder.update(coder_params)
+        old_email = @coder.email
+        @coder.needs_verification! if old_email != @coder.email
         format.html { redirect_to @coder, notice: "#{@coder.coder_name} was successfully updated." }
         format.json { render :show, status: :ok, location: @coder }
       else
