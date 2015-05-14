@@ -1,8 +1,8 @@
 <% if current_coder %>
   <div class='container-dashboard'>
-    <%= link_to 'Projects', projects_path, {class: 'btn btn-maroon-white'} %>
-    <%= link_to 'Snippets', snippets_path, {class: 'btn btn-maroon-white'} %>
-    <%= link_to 'Courses', courses_path, {class: 'btn btn-maroon-white'} %>
+    <%= link_to 'Projects', projects_path, {class: 'btn btn-primary'} %>
+    <%= link_to 'Snippets', snippets_path, {class: 'btn btn-primary'} %>
+    <%= link_to 'Courses', courses_path, {class: 'btn btn-primary'} %>
   </div>
 <% end %>
 <br/>
@@ -49,3 +49,6 @@
     </div>
   </div>
 </div>
+<% if admin? %>
+  <%= link_to 'reset 500', reset_coder_500_path, {class: 'btn btn-default'} %>
+<% end %>

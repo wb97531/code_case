@@ -30,7 +30,7 @@ class CodersController < ApplicationController
       if @coder.save
         @coder.needs_verification!
         session[:coder_id] = @coder.id
-        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you #{} for signing up. An email has been sent for to you for verification."}
+        format.html { redirect_to dashboard_path(@coder.id), notice: "Thank you #{} for signing up. An email has been sent for to you for verification." }
         format.json { render :show, status: :created, location: @coder }
       else
         format.html { render :new }
@@ -83,12 +83,19 @@ class CodersController < ApplicationController
   # DELETE /coders/1
   # DELETE /coders/1.json
   def destroy
-    @coder.destroy
-    session[:coder_id] = nil
-    session[:coders_email] = nil
-    respond_to do |format|
-      format.html { redirect_to root_path, notice: "#{@coder.coder_name}'s account was successfully destroyed." }
-      format.json { head :no_content }
+    if @coder.id != 500
+      @coder.destroy
+      session[:coder_id] = nil
+      session[:coders_email] = nil
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "#{@coder.coder_name}'s account was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path, notice: "You are not authorized to delete #{@coder.coder_name}'s account." }
+        format.json { head :no_content }
+      end
     end
   end
 
